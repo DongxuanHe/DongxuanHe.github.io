@@ -426,8 +426,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-",
-          title: '',
+            },},{id: "news-no-news-currently",
+          title: 'No news currently.',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
