@@ -645,13 +645,4 @@ jsonresume:
   - interests
   - references
 
-  # -----------------------------------------------------------------------------
-# Social links
-# -----------------------------------------------------------------------------
-social:
-  github: https://github.com/DongxuanHe
-  linkedin: https://www.linkedin.com/in/dongxuan-he-311739225
-  scholar:
-  email: hedxszzx@outlook.com
-  rss: false
 
