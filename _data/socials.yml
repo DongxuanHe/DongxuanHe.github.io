@@ -1,13 +1,11 @@
-# this file contains the social media links and usernames of the author
-
-email: hedxszzx@outlook.com
-github_username: DongxuanHe
-linkedin_username: dongxuan-he-311739225
-scholar_userid: qc6CJjYAAAAJ
+email: "hedxszzx@outlook.com"
+github_username: "DongxuanHe"
+linkedin_username: "dongxuan-he-311739225" # 只写用户名，不要整条 URL
+scholar_userid: "" # 没有就留空（或删掉这一行）
 rss_icon: true
 
-# optional: delete this whole section if not needed
+# 如不需要自定义图标，这段可以直接删掉
 # custom_social:
-#   logo: https://your-logo-url.png
-#   title: Custom Social
-#   url: https://your-custom-link.com
+#   logo: "https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png"
+#   title: "Custom Social"
+#   url: "https://www.alberteinstein.com/"
