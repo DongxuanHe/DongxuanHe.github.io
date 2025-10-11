@@ -49,20 +49,23 @@
     {
       "institution": "Purdue University",
       "location": "West Lafayette, IN",
-      "url": "",
+      "url": "https://www.purdue.edu/",
       "area": "Computer Science",
       "studyType": "B.S.",
       "startDate": "2022-8",
       "endDate": "2025-8",
+      "score": "",
+      "courses": ""
     },
     {
       "institution": "Purdue University",
       "location": "West Lafayette, IN",
-      "url": "",
+      "url": "https://www.purdue.edu/",
       "area": "Robotics",
       "studyType": "M.S.",
       "startDate": "2022-8",
       "endDate": "2025-8",
+      "score": "",
       "courses": ["Theory of Control", "Reinforcement Learning"]
     }
   ],
