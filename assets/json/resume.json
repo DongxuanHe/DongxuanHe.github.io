@@ -52,8 +52,8 @@
       "url": "https://www.purdue.edu/",
       "area": "Computer Science",
       "studyType": "B.S.",
-      "startDate": "2022-8",
-      "endDate": "2025-8",
+      "startDate": "2022-08",
+      "endDate": "2025-08",
       "score": "",
       "courses": ""
     },
@@ -63,8 +63,8 @@
       "url": "https://www.purdue.edu/",
       "area": "Robotics",
       "studyType": "M.S.",
-      "startDate": "2022-8",
-      "endDate": "2025-8",
+      "startDate": "2025-08",
+      "endDate": "2027-01",
       "score": "",
       "courses": ["Theory of Control", "Reinforcement Learning"]
     }
