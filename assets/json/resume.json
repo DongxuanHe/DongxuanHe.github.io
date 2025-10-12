@@ -80,46 +80,11 @@
   ],
   "certificates": [
     {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
+      "name": "Bachelor of Science",
+      "date": "2025-08",
+      "issuer": "Purdue University",
+      "url": "https://www.purdue.edu/",
+      "icon": "fa-solid fa-graduation-cap"
     }
   ],
   "publications": [
@@ -147,42 +112,77 @@
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "name": "Programming Languages",
+      "level": "Advanced",
+      "icon": "fa-solid fa-code",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "C++",
+        "Python",
+        "C",
+        "Java"
+      ]
+    },
+    {
+      "name": "Systems & Tools",
+      "level": "Proficient",
+      "icon": "fa-solid fa-gears",
+      "keywords": [
+        "Linux",
+        "SQL",
+        "Git",
+        "Docker",
+        "gRPC",
+        "Protocol Buffers",
+        "Bash"
+      ]
+    },
+    {
+      "name": "ML & Data",
+      "level": "Advanced",
+      "icon": "fa-solid fa-brain",
+      "keywords": [
+        "PyTorch",
+        "TensorFlow",
+        "NumPy",
+        "Pandas",
+        "CUDA",
+        "R",
+        "MATLAB"
       ]
     }
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker",
+      "language": "English",
+      "fluency": "Professional",
       "icon": ""
     },
     {
-      "language": "English",
-      "fluency": "Fluent",
+      "language": "Chinese",
+      "fluency": "Native",
       "icon": ""
     }
   ],
   "interests": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
+      "name": "Machine Learning",
+      "icon": "fa-solid fa-brain",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Reinforcement Learning",
+        "Deep Learning",
+        "Optimization Algorithms"
+      ]
+    },
+    {
+      "name": "Control & ML",
+      "icon": "fa-solid fa-robot",
+      "keywords": [
+        "Control Theory",
+        "Multi-Agent Systems",
+        "Sim2Real Transfer",
+        "SLAM and Localization",
+        "Trajectory Optimization",
+        "Autonomous Systems"
       ]
     }
   ],
