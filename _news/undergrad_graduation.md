@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Completed B.S. in CS"
+title: "Completion of Undergraduate Studies in CS"
 date: 2025-08-12
 inline: true
 related_posts: false
