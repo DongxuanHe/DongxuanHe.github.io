@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Completed B.S. in CS"
-date: 2025-08
+date: 2025-08-12
 inline: true
 related_posts: false
 published: true
