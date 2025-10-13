@@ -60,8 +60,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-no-news-currently",
-          title: 'No news currently.',
+            },},{id: "news-i-completed-my-b-s-in-computer-science-with-a-minor-in-electrical-and-computer-engineering-at-purdue-university-finishing-the-program-in-three-years-i-also-received-my-bachelor-s-diploma-in-august-2025",
+          title: 'I completed my B.S. in Computer Science with a minor in Electrical and...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
