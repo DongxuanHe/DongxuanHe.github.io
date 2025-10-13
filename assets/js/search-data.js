@@ -60,10 +60,12 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-completed-my-b-s-in-computer-science-with-a-minor-in-electrical-and-computer-engineering-at-purdue-university-finishing-the-program-in-three-years-i-also-received-my-bachelor-s-diploma-in-august-2025",
-          title: 'I completed my B.S. in Computer Science with a minor in Electrical and...',
+            },},{id: "news-completion-of-undergraduate-studies-in-cs",
+          title: 'Completion of Undergraduate Studies in CS',
           description: "",
-          section: "News",},{id: "projects-project-1",
+          section: "News",handler: () => {
+              window.location.href = "/news/undergrad_graduation/";
+            },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
