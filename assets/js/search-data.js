@@ -65,6 +65,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/undergrad_graduation/";
+            },},{id: "news-started-my-master-39-s-in-robotics-at-purdue-icon",
+          title: 'Started my Master&amp;#39;s in Robotics at Purdue ICON',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/master/";
             },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
