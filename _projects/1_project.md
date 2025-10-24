@@ -3,7 +3,7 @@ layout: page
 title: Multi-Agent Reinforcement Learning and Sim2Real Transfer
 description: Bridging simulation and real-world domains in multi-agent learning
 img: /assets/img/12.png
-importance: 10
+importance: 1
 category: work
 related_publications: true
 ---
