@@ -70,11 +70,21 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/master/";
+            },},{id: "projects-multi-agent-reinforcement-learning-and-sim2real-transfer",
+          title: 'Multi-Agent Reinforcement Learning and Sim2Real Transfer',
+          description: "Bridging simulation and real-world domains in multi-agent learning",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
             },},{id: "projects-project-7",
           title: 'project 7',
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
+            },},{id: "projects-reinforcement-learning-for-uav-obstacle-avoidance",
+          title: 'Reinforcement Learning for UAV Obstacle Avoidance',
+          description: "Training autonomous UAVs to navigate from point A to B while avoiding randomly placed obstacles",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
             },},{id: "projects-project-8",
           title: 'project 8',
           description: "an other project with a background image and giscus comments",
@@ -105,16 +115,6 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "projects-reinforcement-learning-for-uav-obstacle-avoidance",
-          title: 'Reinforcement Learning for UAV Obstacle Avoidance',
-          description: "Training autonomous UAVs to navigate from point A to B while avoiding randomly placed obstacles",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-multi-agent-reinforcement-learning-and-sim2real-transfer",
-          title: 'Multi-Agent Reinforcement Learning and Sim2Real Transfer',
-          description: "Bridging simulation and real-world domains in multi-agent learning",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
             },},{
         id: 'social-email',
         title: 'email',
