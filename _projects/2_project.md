@@ -1,39 +1,37 @@
 ---
 layout: page
-title: Multi-Agent Reinforcement Learning and Sim2Real Transfer
-description: Bridging simulation and real-world domains in multi-agent learning
+title: Reinforcement Learning for UAV Obstacle Avoidance
+description: Training autonomous UAVs to navigate from point A to B while avoiding randomly placed obstacles
 img: /assets/img/12.png
-importance: 2
+importance: 1
 category: work
 related_publications: true
 ---
 
 ### Overview
 
-This project focuses on **multi-agent reinforcement learning (MARL)** and its **Sim2Real (simulation-to-reality) transfer**.  
-The goal is to enable cooperative and competitive agents trained in simulation environments to generalize effectively to real-world settings.
+This project explores the application of **reinforcement learning (RL)** to enable **autonomous unmanned aerial vehicles (UAVs)** to safely navigate toward a target location while avoiding obstacles in complex environments.  
+Instead of relying on handcrafted control laws or pre-defined paths, the UAV learns an adaptive policy through trial and error, optimizing long-term rewards that balance **goal-reaching** and **collision avoidance**.
 
-We explore questions such as:
-- How to achieve **robust coordination** among multiple agents in dynamic, partially observable environments.
-- How to design **policy architectures and training curricula** that facilitate transfer from simulation to physical systems.
-- How domain randomization, adaptation, and representation learning can mitigate the Sim2Real gap.
+The agent interacts with a 2D continuous environment where both the number and positions of obstacles are **randomized** across training episodes.  
+By employing **curriculum learning**, the UAV starts in simple scenarios with few obstacles and gradually progresses to dense, cluttered environments—eventually achieving robust, multi-stage avoidance behavior.
 
 ### Key Topics
-- Decentralized training with centralized critics  
-- Robust policy transfer and domain adaptation  
-- Multi-robot collaboration and swarm intelligence  
-- Benchmarking in simulated and real-world robotic tasks
+- Policy learning for dynamic obstacle avoidance  
+- Environment randomization and curriculum training  
+- Reward shaping for stable convergence  
+- PPO-based continuous control and behavior generalization  
+- Comparative baselines: reactive vs. learned policies  
 
-<div class="row justify-content-sm-center">
-  <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="/assets/img/marl-agents.jpg" title="Left" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="/assets/img/robot-lab.jpg" title="Right" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-<div class="caption">
-  Left | Right
-</div>
+### Problem Motivation
+
+Classical control methods (e.g., PID or trajectory planning) perform well in static, known environments but struggle in unpredictable or changing obstacle configurations.  
+Reinforcement learning offers a model-free alternative: the UAV directly learns **how to react to any configuration** without explicit path planning.  
+This flexibility allows for scalable deployment in scenarios where **mission routes, obstacles, or wind disturbances** vary dynamically.
 
 ### Future Work
+
+
+<div class="text-center mt-4">
+  <em style="color:gray;">🕒 Publication and more detailed content coming soon.</em>
+</div>
