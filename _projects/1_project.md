@@ -24,16 +24,8 @@ We explore questions such as:
 - Multi-robot collaboration and swarm intelligence  
 - Benchmarking in simulated and real-world robotic tasks
 
-<div class="row justify-content-sm-center">
-  <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="/assets/img/marl-agents.jpg" title="Left" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="/assets/img/robot-lab.jpg" title="Right" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-<div class="caption">
-  Left | Right
-</div>
-
 ### Future Work
+
+<div class="text-center mt-4">
+  <em style="color:gray;">🕒 Publication and more detailed content coming soon...</em>
+</div>
