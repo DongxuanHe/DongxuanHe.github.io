@@ -153,8 +153,6 @@ collections:
     output: true
   projects:
     output: true
-    sort_by: importance
-    order: descending
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
