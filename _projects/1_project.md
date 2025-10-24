@@ -26,20 +26,14 @@ We explore questions such as:
 
 <div class="row justify-content-sm-center">
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="/assets/img/marl-agents.jpg" title="Simulated multi-agent environment" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="/assets/img/marl-agents.jpg" title="Left" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="/assets/img/robot-lab.jpg" title="Real-world robot experiments" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="/assets/img/robot-lab.jpg" title="Right" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
-  Left: agents trained collaboratively in simulation; Right: deployment to real robots for transfer evaluation.
+  Left | Right
 </div>
 
 ### Future Work
-In future iterations, we plan to:
-- Incorporate **graph neural networks (GNNs)** for relational reasoning among agents.
-- Evaluate transfer on **physical robot platforms** using onboard sensors and local communication.
-- Integrate with upcoming publications on **policy adaptation and cross-domain imitation**.
-
-*(Publications related to this project will be added to the Publications page once released.)*
