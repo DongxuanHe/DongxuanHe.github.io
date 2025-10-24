@@ -75,9 +75,9 @@ ninja.data = [{
           description: "Bridging simulation and real-world domains in multi-agent learning",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-multi-agent-reinforcement-learning-and-sim2real-transfer",
-          title: 'Multi-Agent Reinforcement Learning and Sim2Real Transfer',
-          description: "Bridging simulation and real-world domains in multi-agent learning",
+            },},{id: "projects-reinforcement-learning-for-uav-obstacle-avoidance",
+          title: 'Reinforcement Learning for UAV Obstacle Avoidance',
+          description: "Training autonomous UAVs to navigate from point A to B while avoiding randomly placed obstacles",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
