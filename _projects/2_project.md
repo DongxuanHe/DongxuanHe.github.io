@@ -2,7 +2,7 @@
 layout: page
 title: Reinforcement Learning for UAV Obstacle Avoidance
 description: Training autonomous UAVs to navigate from point A to B while avoiding randomly placed obstacles
-img: /assets/img/12.png
+img: /assets/img/uav.png
 importance: 9
 category: work
 related_publications: true
