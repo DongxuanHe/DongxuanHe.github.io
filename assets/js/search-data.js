@@ -70,9 +70,9 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/master/";
-            },},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+            },},{id: "projects-multi-agent-reinforcement-learning-and-sim2real-transfer",
+          title: 'Multi-Agent Reinforcement Learning and Sim2Real Transfer',
+          description: "Bridging simulation and real-world domains in multi-agent learning",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-project-2",
