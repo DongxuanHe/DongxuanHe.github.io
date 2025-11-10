@@ -85,9 +85,9 @@ ninja.data = [{
           description: "A research-oriented project exploring methods to improve the robustness, adaptability, and reliability of SLAM systems in real-world environments.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-active-learning-strategies-for-image-classification",
+          title: 'Active Learning Strategies for Image Classification',
+          description: "A comparative study of five active learning sampling strategies aimed at reducing labeling cost while maintaining model accuracy.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{id: "projects-project-5",
