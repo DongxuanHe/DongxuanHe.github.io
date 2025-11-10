@@ -1,80 +1,108 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
-category: fun
+title: Active Learning Strategies for Image Classification
+description: A comparative study of five active learning sampling strategies aimed at reducing labeling cost while maintaining model accuracy.
+img: /assets/img/al.png
+importance: 4
+category: work
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+This project explores how **active learning (AL)** can reduce the cost of data annotation for image classification by selectively querying the most informative samples. Instead of labeling the entire dataset, AL aims to construct a compact yet highly representative training set, allowing models to achieve strong performance with fewer labels.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Our work compares **five active learning sampling strategies** under a unified experimental framework using the Fashion-MNIST dataset. The goal is to understand how different query mechanisms balance *labeling efficiency*, *uncertainty*, and *diversity*.  
+This project is based on the proposal document  
+:contentReference[oaicite:1]{index=1}.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+---
+
+### Motivation
+
+In real-world machine learning applications, acquiring large labeled datasets is often expensive, slow, or requiring domain expertise. Active learning addresses this challenge by allowing a model to:
+
+- evaluate its uncertainty  
+- identify the most valuable unlabeled samples  
+- request labels only where they matter  
+
+This makes AL particularly useful in medical imaging, robotics, remote sensing, and any domain where annotation is costly.
+
+Our objective is to conduct a structured comparison and determine which strategies provide the **best trade-off between accuracy and labeling cost**.
+
+---
+
+### Methods Compared
+
+Each team member implements one AL method, forming a diverse set of strategies:
+
+#### • Bayesian Active Learning (BALD) – *He*  
+Implements **MC Dropout**–based Bayesian inference (Gal et al., 2017).  
+The method evaluates uncertainty via predictive disagreement and selects samples that maximize **mutual information** with the model parameters.
+
+#### • Core-Set Selection – *Pengyuan*  
+Implements the **k-Center greedy** algorithm (Sener & Savarese, 2018), treating active learning as a covering problem in feature space.  
+This method aims to choose a representative subset that approximates the full training distribution.
+
+#### • BADGE – *Teresa*  
+Implements **gradient embedding clustering** (Ash et al., 2020).  
+Each sample is mapped to a gradient space capturing both uncertainty and diversity, and batches are chosen using k-means++ initialization.
+
+#### • Uncertainty-Based Sampling – *Wei*  
+Implements three classical uncertainty measures:  
+- least confidence  
+- margin sampling  
+- entropy-based sampling  
+
+These approaches query samples where the model is most unsure, providing a strong and widely used baseline.
+
+#### • Consistency-Based Semi-Supervised Active Learning – *Yi*  
+Implements the CSAL method (Gao et al., 2020), which leverages unlabeled data through **consistency regularization**.  
+By training the model to be stable against perturbations, it improves learning even before labels are acquired.
+
+---
+
+### Experimental Framework
+
+All methods will be compared under the same setup:
+
+- **Dataset**: Fashion-MNIST  
+- **Baseline**: Random sampling  
+- **Classifier**: CNN model trained iteratively  
+- **Evaluation criteria**  
+  - Classification accuracy  
+  - Label efficiency  
+  - Convergence rate across AL rounds  
+  - Sample diversity and informativeness  
+
+The shared framework ensures a fair and reproducible comparison.
+
+---
+
+### Expected Outcomes
+
+As the project progresses, the following components will be added:
+
+- Accuracy curves across AL rounds  
+- Label efficiency comparisons  
+- Visualizations of queried samples  
+- Gradient embedding or uncertainty heatmaps  
+- Detailed analysis comparing the strengths and weaknesses of each method  
+
+This page will be updated as results and visualizations become available.
+
+---
+
+### Future Extensions
+
+Potential follow-up directions include:
+
+- Extending from Fashion-MNIST to CIFAR-10 or medical imaging datasets  
+- Evaluating AL under noisy labels or distribution shifts  
+- Investigating hybrid AL strategies combining uncertainty + diversity  
+- Applying AL to semi-supervised or reinforcement learning settings  
+- Analyzing computational cost vs. performance trade-offs  
+
+<div class="text-center mt-4">
+  <em style="color:gray;">🕒 Results, plots, and comparative insights will be added as the project develops.</em>
 </div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
