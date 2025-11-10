@@ -1,81 +1,108 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Robust SLAM Enhancement Proposal
+description: A research-oriented project exploring methods to improve the robustness, adaptability, and reliability of SLAM systems in real-world environments.
+img: /assets/img/SLAM.jpg
 importance: 3
 category: work
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+This project outlines a research plan aimed at **enhancing the robustness of Simultaneous Localization and Mapping (SLAM)** in realistic, unpredictable conditions.  
+Modern SLAM pipelines perform impressively under tidy laboratory settings, yet begin皱眉 the moment the world becomes difficult: low-texture walls, drifting sensors, restless lighting, moving objects.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+The goal here is to design and evaluate techniques that make SLAM **more stable, more adaptable, and more trustworthy**, even when the environment misbehaves.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+---
+
+### Motivation
+
+Real-world environments rarely extend the courtesy of being simple.
+
+Robots must navigate through:
+
+- **Low-texture surfaces** that starve feature-based front-ends  
+- **Dramatic light changes** that confuse visual odometry  
+- **Dynamic objects** that inject outliers into motion estimation  
+- **IMU drift and sensor noise** that accumulate over time  
+- **Unpredictable environments** that break handcrafted assumptions  
+- **Unreliable loop closures** that can abruptly destabilize a map  
+
+Traditional SLAM pipelines often rely on brittle geometric cues.  
+When these cues degrade, the system may lose tracking, distort the map, or fail to recover.
+
+To build robots that remain oriented and composed in the untidy reality, we need SLAM systems capable of **resilience, adaptation, and self-correction**.
+
+---
+
+### Project Goals
+
+This proposal centers on three overarching goals:
+
+#### 1. Improve Front-End Robustness  
+Enhance feature extraction, tracking, and motion estimation under challenging sensory conditions.
+
+#### 2. Strengthen Back-End Stability  
+Design optimization strategies that remain reliable in the presence of outliers, drift, and uncertain constraints.
+
+#### 3. Adapt to Dynamic Environments  
+Handle moving objects intelligently, reduce their impact on pose estimation, and maintain a consistent global map.
+
+Together, these targets aim to push SLAM toward a more general and durable formulation suitable for robots operating beyond clean test environments.
+
+---
+
+### Technical Directions
+
+The project plans to explore several technical avenues. These represent potential paths rather than fixed commitments, leaving room for iteration and discovery.
+
+#### • Enhanced Visual Odometry  
+Investigate illumination-invariant or learning-based feature extraction.  
+Consider depth-assisted or multi-view consistency checks to reinforce tracking.
+
+#### • VIO Fusion  
+Integrate IMU tightly with vision to mitigate short-term drift and improve motion estimation in weakly textured scenes.
+
+#### • Robust Graph Optimization  
+Experiment with robust kernel functions, adaptive outlier rejection, and relinearization strategies to prevent catastrophic optimization failures.
+
+#### • Improved Loop Closure  
+Study more selective or semantic-enhanced loop detection to avoid false positives and stabilize long-term mapping.
+
+#### • Dynamic Object Handling  
+Explore semantic segmentation or motion classification to identify, down-weight, or fully remove dynamic elements from SLAM constraints.
+
+#### • Dataset-Based Evaluation  
+Plan to benchmark on widely-used datasets such as KITTI, EuRoC, and TUM RGBD to ensure comparability and reproducibility.
+
+---
+
+### Expected Outcomes
+
+Although the project is currently at the proposal stage, the completed version is expected to include:
+
+- **Trajectory comparison plots** across datasets  
+- **Sparse or semi-dense maps** from reconstructed environments  
+- **Robustness evaluations** under lighting changes, occlusions, and motion clutter  
+- **Comparative studies** with established systems like ORB-SLAM3 or LIO-SAM  
+- **A modular implementation** suitable for future extensions  
+
+As the project progresses, visualizations, metrics, and ablation studies will be added to this page.
+
+---
+
+### Future Work
+
+Potential extensions include:
+
+- Scaling from VSLAM or VIO to **full multi-sensor fusion**  
+- Adding semantic layers for **scene understanding and object-level mapping**  
+- Extending to **multi-agent SLAM**, where multiple robots share and merge maps  
+- Deploying methods on **real robotic platforms** such as UAVs or ground robots  
+- Exploring robustness under extreme environmental variations  
+
+<div class="text-center mt-4">
+  <em style="color:gray;">🕒 Experimental results, visualizations, and benchmark analysis will be added as the project develops.</em>
 </div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
