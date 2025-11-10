@@ -12,8 +12,8 @@ related_publications: false
 
 This project explores how **active learning (AL)** can reduce the cost of data annotation for image classification by selectively querying the most informative samples. Instead of labeling the entire dataset, AL aims to construct a compact yet highly representative training set, allowing models to achieve strong performance with fewer labels.
 
-Our work compares **five active learning sampling strategies** under a unified experimental framework using the Fashion-MNIST dataset. The goal is to understand how different query mechanisms balance *labeling efficiency*, *uncertainty*, and *diversity*.  
-This project is based on the proposal document  
+Our work compares **five active learning sampling strategies** under a unified experimental framework using the Fashion-MNIST dataset. The goal is to understand how different query mechanisms balance *labeling efficiency*, *uncertainty*, and *diversity*.
+This project is based on the proposal document
 :contentReference[oaicite:1]{index=1}.
 
 ---
