@@ -80,9 +80,9 @@ ninja.data = [{
           description: "Training autonomous UAVs to navigate from point A to B while avoiding randomly placed obstacles",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-robust-slam-enhancement-proposal",
+          title: 'Robust SLAM Enhancement Proposal',
+          description: "A research-oriented project exploring methods to improve the robustness, adaptability, and reliability of SLAM systems in real-world environments.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-project-4",
