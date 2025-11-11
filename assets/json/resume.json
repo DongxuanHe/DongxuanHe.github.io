@@ -132,6 +132,16 @@
       ]
     }
   ],
+  "Hobbies": [
+    {
+      "name": "Swimming",
+      "keywords": ["National Level 1 Athlete"]
+    },
+    {
+      "name": "Piano",
+      "keywords": ["Level 10 Certification"]
+    }
+  ]
   "languages": [
     {
       "language": "English",
@@ -174,14 +184,10 @@
       "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
     }
   ],
-  "projects": [
+ "projects": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "See full project list",
+      "url": "https://dongxuanhe.github.io/projects/"
     }
   ]
 }
