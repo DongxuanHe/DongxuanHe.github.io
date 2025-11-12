@@ -133,16 +133,10 @@
     }
   ],
   "hobbies": [
-    {
-      "name": "Swimming",
-      "icon": "fa-solid fa-person-swimming",
-      "keywords": ["National Level 1 Athlete"]
-    },
-    {
-      "name": "Piano",
-      "icon": "fa-solid fa-music",
-      "keywords": ["Level 10 Certification"]
-    }
+    { "name": "Swimming", "icon": "fa-solid fa-person-swimming",
+      "keywords": ["National Level 1 Athlete"] },
+    { "name": "Piano", "icon": "fa-solid fa-music",
+      "keywords": ["Level 10 Certification"] }
   ],
   "languages": [
     {
