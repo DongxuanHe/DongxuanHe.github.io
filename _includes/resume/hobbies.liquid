@@ -1,0 +1,11 @@
+<section class="hobbies">
+  <h2 class="section-title">Hobbies</h2>
+  {% for hobby in site.data.resume.hobbies %}
+    <div class="item">
+      <h3>{{ hobby.name }}</h3>
+      {% if hobby.keywords %}
+        <p>{{ hobby.keywords | join: ", " }}</p>
+      {% endif %}
+    </div>
+  {% endfor %}
+</section>
