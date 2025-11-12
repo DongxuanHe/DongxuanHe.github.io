@@ -132,7 +132,7 @@
       ]
     }
   ],
-  "Hobbies": [
+  "hobbies": [
     {
       "name": "Swimming",
       "keywords": ["National Level 1 Athlete"]
