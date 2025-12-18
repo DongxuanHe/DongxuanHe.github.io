@@ -144,7 +144,7 @@ On randomized test environments, the learned PPO policy achieves substantially h
 <figure class="figure text-center">
   <img src="/assets/img/uav/learning_curve_success.png"
        class="figure-img img-fluid rounded d-block mx-auto"
-       style="max-width: 700px; width: 100%;"
+       style="max-width: 500px; width: 100%;"
        alt="Learning curve: success rate vs timesteps">
   <figcaption class="figure-caption">
     Learning curve showing success rate as a function of training timesteps for the PPO policy.
