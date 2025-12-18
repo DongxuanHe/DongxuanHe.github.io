@@ -12,7 +12,7 @@ related_publications: false
 
 Active learning (AL) reduces annotation cost by iteratively selecting the most informative unlabeled samples for labeling, rather than labeling the full dataset upfront. In this project, we conduct a survey-driven, controlled empirical comparison of representative AL acquisition strategies on **Fashion-MNIST**, using a single unified experimental pipeline so that observed performance differences primarily stem from the query strategy itself.
 
-This is a collaborative project conducted under a shared experimental protocol. While multiple acquisition methods are evaluated, this page places particular emphasis on **BALD (Bayesian Active Learning by Disagreement)**, whose behavior exhibits an especially instructive accuracy–efficiency trade-off. :contentReference[oaicite:0]{index=0}
+This is a collaborative project conducted under a shared experimental protocol. While multiple acquisition methods are evaluated, this page places particular emphasis on **BALD (Bayesian Active Learning by Disagreement)**, whose behavior exhibits an especially instructive accuracy–efficiency.
 
 
 ## Experimental Framework (Unified Protocol)
@@ -86,7 +86,30 @@ BALD incurs substantially higher computational cost than single-pass uncertainty
 
 ## Key Insight: Why BALD Starts Near 50% Accuracy but Finishes Best
 
-A notable empirical phenomenon is that **BALD exhibits low initial accuracy (≈50%)**, yet ultimately **outperforms all other strategies**.
+A notable empirical phenomenon is that BALD exhibits low initial accuracy **(≈50%)**, yet ultimately outperforms all other strategies. This behavior is illustrated in the result curves below.
+
+<div class="text-center">
+  <img src="/assets/img/al/result_curve.png"
+       class="img-fluid rounded d-block mx-auto"
+       style="max-width: 600px; width: 100%;"
+       alt="Active learning result curve on Fashion-MNIST">
+
+  <p class="text-muted small mt-2">
+    Result curves showing test accuracy as a function of the number of labeled samples for different active learning strategies on Fashion-MNIST.
+  </p>
+</div>
+
+<div class="text-center mt-4">
+  <img src="/assets/img/al/comparison.png"
+       class="img-fluid rounded d-block mx-auto"
+       style="max-width: 500px; width: 100%;"
+       alt="Training time comparison of active learning strategies">
+
+  <p class="text-muted small mt-2">
+    Comparison of total execution time for different active learning strategies, highlighting the computational overhead of Bayesian and consistency-based methods.
+  </p>
+</div>
+
 
 ### Early-Stage Instability
 
@@ -95,7 +118,7 @@ In the earliest active learning rounds:
 - learned representations are poorly structured,
 - and dropout-induced predictions behave nearly randomly.
 
-Under these conditions, disagreement across stochastic forward passes does **not yet reliably reflect epistemic uncertainty**, causing BALD to query suboptimal samples and lag behind simpler heuristics.
+Under these conditions, disagreement across stochastic forward passes does not yet reliably reflect epistemic uncertainty, causing BALD to query suboptimal samples and lag behind simpler heuristics.
 
 ### Late-Stage Superiority
 
@@ -104,7 +127,7 @@ As training progresses and the representation space stabilizes:
 - BALD naturally avoids aleatoric noise and outliers,
 - and queried samples more effectively reduce parameter uncertainty.
 
-Once uncertainty estimates become reliable, BALD consistently selects highly informative samples and achieves the **highest final test accuracy** across labeling budgets. This behavior highlights a central trade-off: BALD sacrifices early stability in exchange for superior long-term performance.
+Once uncertainty estimates become reliable, BALD consistently selects highly informative samples and achieves the highest final test accuracy across labeling budgets. This behavior highlights a central trade-off: BALD sacrifices early stability in exchange for superior long-term performance.
 
 
 ## Results Summary
