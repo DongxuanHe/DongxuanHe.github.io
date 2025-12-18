@@ -26,15 +26,15 @@ Rather than focusing on algorithmic novelty, this work emphasizes **end-to-end p
 
 Classical autonomy pipelines often combine global planners (e.g., A*/RRT) with tracking controllers (PID/MPC). They can work well when maps are accurate and environments are static, but performance degrades when obstacle layouts vary across missions or global maps are unavailable.
 
-Reinforcement learning offers a model-free alternative: the UAV directly learns a **reactive policy** that maps **local sensing** to control actions, enabling navigation without explicit path planning.
+**Reinforcement learning** offers a model-free alternative: the UAV directly learns a reactive policy that maps local sensing to control actions, enabling navigation without explicit path planning.
 
 ### Problem Formulation
 
 We formulate the task as a partially observable Markov Decision Process **(POMDP)**.
 
-Dynamics (2D double integrator): The UAV state evolves with a simple inertial model using continuous acceleration commands, with velocity and actions clipped for feasibility.
+**Dynamics** (2D double integrator): The UAV state evolves with a simple inertial model using continuous acceleration commands, with velocity and actions clipped for feasibility.
 
-Observations (local sensing only):
+**Observations** (local sensing only):
 - Goal-relative position:
 $$
 (x_g - x,\; y_g - y)
@@ -63,7 +63,7 @@ r_t
 + r_t^{\text{safe}}
 + r_t^{\text{energy}}
 + r_t^{\text{smooth}}
-+ r_t^{\text{time}} .
++ r_t^{\text{time}}
 $$
 
 Each component is defined as follows.
@@ -139,6 +139,41 @@ On randomized test environments, the learned PPO policy achieves substantially h
 - Avg path length (m): PPO 5.02 vs. APF 4.75
 - Energy per step: PPO 1.06 vs. APF 8.91  
 - Smoothness (jerk/step): PPO 0.10 vs. APF 1.25
+
+<!-- Learning curve (single figure) -->
+<figure class="figure text-center">
+  <img src="/assets/img/uav/learning_curve_success.png"
+       class="figure-img img-fluid rounded"
+       alt="Learning curve: success rate vs timesteps">
+  <figcaption class="figure-caption">
+    Learning curve showing success rate as a function of training timesteps for the PPO policy.
+  </figcaption>
+</figure>
+
+<div class="mt-4"></div>
+
+<!-- Final evaluation: side-by-side figures -->
+<div class="row">
+  <div class="col-md-6 text-center">
+    <img src="/assets/img/uav/fig_success_rate.png"
+         class="img-fluid rounded"
+         alt="Final success rate comparison">
+    <p class="text-muted small mt-2">
+      Final success rate on unseen randomized environments (PPO vs APF).
+    </p>
+  </div>
+
+  <div class="col-md-6 text-center">
+    <img src="/assets/img/uav/fig_energy.png"
+         class="img-fluid rounded"
+         alt="Energy per step comparison">
+    <p class="text-muted small mt-2">
+      Average energy consumption per step (PPO vs APF).
+    </p>
+  </div>
+</div>
+
+
 
 Overall, PPO generalizes to unseen static obstacle layouts and produces trajectories that are safer, smoother, and more energy-efficient, while APF frequently fails in clutter due to local minima.
 
