@@ -102,7 +102,7 @@ A notable empirical phenomenon is that BALD exhibits low initial accuracy **(≈
 <div class="text-center mt-4">
   <img src="/assets/img/al/comparison.png"
        class="img-fluid rounded d-block mx-auto"
-       style="max-width: 500px; width: 100%;"
+       style="max-width: 600px; width: 100%;"
        alt="Training time comparison of active learning strategies">
 
   <p class="text-muted small mt-2">
@@ -140,3 +140,10 @@ Empirical results on Fashion-MNIST show that:
 - Simpler uncertainty methods are computationally efficient, while BALD and CSAL incur higher overhead
 
 The underperformance of Core-Set is attributed to the limited geometric quality of MLP feature embeddings, which can cause the k-center algorithm to prioritize outliers rather than informative samples.
+
+
+## Additional Materials
+
+For readers interested in the full technical details and experimental results, the complete project report is available here:
+
+- [Project report (PDF)](/assets/files/AL_Final_Report.pdf)
