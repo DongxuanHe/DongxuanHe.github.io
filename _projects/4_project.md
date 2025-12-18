@@ -31,7 +31,7 @@ We follow a standard pool-based active learning loop:
 - Rounds: 100 (total labeled samples: 10,000)  
 - Model: MLP with a 256-dimensional hidden layer and linear softmax head  
 - Loss: sparse categorical cross-entropy  
-- Optimizer: Adam, learning rate \( 3 \times 10^{-4} \)  
+- Optimizer: Adam, learning rate $3 \times 10^{-4}$ 
 - Training protocol: model reinitialized and trained from scratch each round until convergence  
 - Baseline: uniform random sampling
 
@@ -50,7 +50,6 @@ Five representative active learning strategies are evaluated:
 
 All methods are implemented independently but evaluated within the same pipeline.
 
----
 
 ## Focus Method: BALD (Bayesian Active Learning by Disagreement)
 
@@ -58,7 +57,7 @@ All methods are implemented independently but evaluated within the same pipeline
 
 BALD targets **epistemic uncertainty**, measuring how much revealing a label would reduce uncertainty over model parameters. Exact Bayesian inference is intractable for deep networks, so BALD employs **Monte Carlo dropout** to approximate sampling from the posterior.
 
-For an unlabeled input \( x \), we perform \( T \) stochastic forward passes with dropout enabled, yielding predictive distributions
+For an unlabeled input $x$, we perform $T$ stochastic forward passes with dropout enabled, yielding predictive distributions
 $$
 p^{(t)}(y \mid x), \quad t = 1, \dots, T
 $$
@@ -82,7 +81,7 @@ The first term captures total predictive uncertainty, while the second estimates
 
 ### Computational Cost
 
-BALD incurs substantially higher computational cost than single-pass uncertainty heuristics because each acquisition step requires **\( T = 20 \)** stochastic forward passes per unlabeled example, making it roughly **20× more expensive** than entropy- or margin-based methods.
+BALD incurs substantially higher computational cost than single-pass uncertainty heuristics because each acquisition step requires $T = 20$ stochastic forward passes per unlabeled example, making it roughly **20× more expensive** than entropy- or margin-based methods.
 
 
 ## Key Insight: Why BALD Starts Near 50% Accuracy but Finishes Best
