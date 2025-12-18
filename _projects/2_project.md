@@ -10,8 +10,7 @@ related_publications: false
 
 ### Overview
 
-This project investigates a **model-free deep reinforcement learning** approach for*UAV obstacle avoidance under partial observability.  
-A continuous-control policy is trained to navigate from a start location to a goal while avoiding randomized static obstacles in a lightweight 2D simulation.
+This project investigates a **model-free deep reinforcement learning** approach for*UAV obstacle avoidance under partial observability. A continuous-control policy is trained to navigate from a start location to a goal while avoiding randomized static obstacles in a lightweight 2D simulation.
 
 Rather than focusing on algorithmic novelty, this work emphasizes **end-to-end problem formulation**, fair baseline comparison, and systematic evaluation as a first research-style RL project.
 
@@ -197,3 +196,11 @@ Future directions include:
 - Adding temporal memory (e.g., recurrent policies) to mitigate partial observability
 - Handling dynamic obstacles and sensor noise
 - Evaluating in higher-fidelity simulators and exploring sim-to-real transfer
+
+
+### Additional Materials
+
+For readers interested in detailed problem formulation, reward design,
+and experimental evaluation, the complete technical report is available here:
+
+- [Project report (PDF)](/assets/files/Final_Report.pdf)
