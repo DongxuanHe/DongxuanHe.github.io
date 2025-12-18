@@ -49,7 +49,7 @@ No global map is provided.
 Actions (continuous control):
 - Planar acceleration command: $(a_x, a_y)$
 
-**Reward Design**
+**Reward Design**:
 
 The shaped reward encourages safe, smooth, and efficient goal-directed behavior.  
 At each timestep $t$, the total reward is defined as:
@@ -69,53 +69,53 @@ Each component is defined as follows.
 
 - Goal progress:
 $$
-r_t^{\text{prog}} = \alpha \left( \lVert g_t \rVert - \lVert g_{t+1} \rVert \right),
+r_t^{\text{prog}} = \alpha \left( \lVert g_t \rVert - \lVert g_{t+1} \rVert \right)
 $$
-which rewards reduction in distance to the goal.
+, which rewards reduction in distance to the goal.
 
 - Goal-reaching bonus:
 $$
-r_t^{\text{goal}} = \kappa \, \mathbb{I}\!\left[\lVert g_{t+1} \rVert \le r_{\text{goal}} \right],
+r_t^{\text{goal}} = \kappa \, \mathbb{I}\!\left[\lVert g_{t+1} \rVert \le r_{\text{goal}} \right]
 $$
-where $\mathbb{I}[\cdot]$ is the indicator function.
+, where $\mathbb{I}[\cdot]$ is the indicator function.
 
 - Collision penalty:
 $$
-r_t^{\text{col}} = -\beta \, \mathbb{I}[\text{collision}],
+r_t^{\text{col}} = -\beta \, \mathbb{I}[\text{collision}]
 $$
-which strongly penalizes unsafe trajectories.
+, which strongly penalizes unsafe trajectories.
 
 - Safety-margin penalty:
 $$
 r_t^{\text{safe}} = -\beta_m \,
-\mathbb{I}\!\left[ \min_i \lVert x_t - c_i \rVert \le r_i + m \right],
+\mathbb{I}\!\left[ \min_i \lVert x_t - c_i \rVert \le r_i + m \right]
 $$
-penalizing proximity to obstacles within a safety margin $m$.
+, penalizing proximity to obstacles within a safety margin $m$.
 
 - Energy regularization:
 $$
-r_t^{\text{energy}} = -\lambda \lVert a_t \rVert^2,
+r_t^{\text{energy}} = -\lambda \lVert a_t \rVert^2
 $$
-discouraging excessive control effort.
+, discouraging excessive control effort.
 
 - Smoothness (jerk) regularization:
 $$
-r_t^{\text{smooth}} = -\mu \lVert a_t - a_{t-1} \rVert^2,
+r_t^{\text{smooth}} = -\mu \lVert a_t - a_{t-1} \rVert^2
 $$
-penalizing abrupt changes in control.
+, penalizing abrupt changes in control.
 
 - Time penalty:
 $$
-r_t^{\text{time}} = -\eta,
+r_t^{\text{time}} = -\eta
 $$
-encouraging efficient task completion.
+, encouraging efficient task completion.
 
 
 ### Methods
 
-**PPO (learned policy).** We train a continuous-control policy using Proximal Policy Optimization (PPO) with Stable-Baselines3. Training runs for 300k timesteps, and each episode randomizes the start–goal pair and obstacle configuration (domain randomization).
+**PPO (learned policy)**: We train a continuous-control policy using Proximal Policy Optimization (PPO) with Stable-Baselines3. Training runs for 300k timesteps, and each episode randomizes the start–goal pair and obstacle configuration (domain randomization).
 
-**APF (classical baseline):** We implement an Artificial Potential Field (APF) controller with goal attraction and obstacle repulsion within an influence radius. APF is reactive and does not require training, but is known to suffer from local minima in cluttered environments.
+**APF (classical baseline)**: We implement an Artificial Potential Field (APF) controller with goal attraction and obstacle repulsion within an influence radius. APF is reactive and does not require training, but is known to suffer from local minima in cluttered environments.
 
 All controllers run under the same dynamics, sensing, and collision checking for a fair comparison.
 
