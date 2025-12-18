@@ -77,7 +77,7 @@ ninja.data = [{
               window.location.href = "/projects/1_project/";
             },},{id: "projects-reinforcement-learning-for-uav-obstacle-avoidance",
           title: 'Reinforcement Learning for UAV Obstacle Avoidance',
-          description: "Training autonomous UAVs to navigate from point A to B while avoiding randomly placed obstacles",
+          description: "Learning a reactive UAV controller in a 2D partially observable environment with randomized obstacle layouts",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-robust-slam-enhancement-proposal",
