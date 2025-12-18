@@ -1,37 +1,93 @@
 ---
 layout: page
 title: Reinforcement Learning for UAV Obstacle Avoidance
-description: Training autonomous UAVs to navigate from point A to B while avoiding randomly placed obstacles
+description: Learning a reactive UAV controller in a 2D partially observable environment with randomized obstacle layouts
 img: /assets/img/uav.png
 importance: 2
 category: work
-related_publications: true
+related_publications: false
 ---
 
 ### Overview
 
-This project explores the application of **reinforcement learning (RL)** to enable **autonomous unmanned aerial vehicles (UAVs)** to safely navigate toward a target location while avoiding obstacles in complex environments.  
-Instead of relying on handcrafted control laws or pre-defined paths, the UAV learns an adaptive policy through trial and error, optimizing long-term rewards that balance **goal-reaching** and **collision avoidance**.
+This project investigates a **model-free deep reinforcement learning** approach for **UAV obstacle avoidance** under **partial observability**.  
+A continuous-control policy is trained to navigate from a start location to a goal while avoiding **randomized static obstacles** in a lightweight 2D simulation.
 
-The agent interacts with a 2D continuous environment where both the number and positions of obstacles are **randomized** across training episodes.  
-By employing **curriculum learning**, the UAV starts in simple scenarios with few obstacles and gradually progresses to dense, cluttered environments—eventually achieving robust, multi-stage avoidance behavior.
+Rather than focusing on algorithmic novelty, this work emphasizes **end-to-end problem formulation**, **fair baseline comparison**, and **systematic evaluation** as a first research-style RL project.
 
 ### Key Topics
-- Policy learning for dynamic obstacle avoidance  
-- Environment randomization and curriculum training  
-- Reward shaping for stable convergence  
-- PPO-based continuous control and behavior generalization  
-- Comparative baselines: reactive vs. learned policies  
+- Reactive obstacle avoidance under partial observability (POMDP)  
+- Domain randomization across start–goal pairs and obstacle layouts  
+- Reward shaping for safe, smooth, and energy-efficient control  
+- PPO-based continuous control (acceleration commands)  
+- Baseline comparison against a classical Artificial Potential Field controller  
 
 ### Problem Motivation
 
-Classical control methods (e.g., PID or trajectory planning) perform well in static, known environments but struggle in unpredictable or changing obstacle configurations.  
-Reinforcement learning offers a model-free alternative: the UAV directly learns **how to react to any configuration** without explicit path planning.  
-This flexibility allows for scalable deployment in scenarios where **mission routes, obstacles, or wind disturbances** vary dynamically.
+Classical autonomy pipelines often combine global planners (e.g., A*/RRT) with tracking controllers (PID/MPC). They can work well when maps are accurate and environments are static, but performance degrades when obstacle layouts vary across missions or global maps are unavailable.
 
-### Future Work
+Reinforcement learning offers a model-free alternative: the UAV directly learns a **reactive policy** that maps **local sensing** to control actions, enabling navigation without explicit path planning.
 
+### Problem Formulation
 
-<div class="text-center mt-4">
-  <em style="color:gray;">🕒 Publication and more detailed content coming soon.</em>
-</div>
+We formulate the task as a **partially observable Markov Decision Process (POMDP)**.
+
+**Dynamics (2D double integrator).** The UAV state evolves with a simple inertial model using continuous acceleration commands, with velocity and actions clipped for feasibility.
+
+**Observations (local sensing only).**
+- Goal-relative position: \((x_g-x,\, y_g-y)\)  
+- Current velocity: \((v_x,\, v_y)\)  
+- Ray-based range sensor distances: \(N\) rays over a **180° field of view**  
+
+No global map is provided.
+
+**Actions (continuous control).**
+- Planar acceleration command: \((a_x, a_y)\)
+
+**Reward design.** The shaped reward encourages:
+- progress toward the goal,
+- a goal-reaching bonus,
+- collision and safety-margin penalties,
+- energy (control effort) regularization,
+- smoothness (jerk) regularization,
+- a small per-step time penalty.
+
+### Methods
+
+**PPO (learned policy).** We train a continuous-control policy using **Proximal Policy Optimization (PPO)** with Stable-Baselines3. Training runs for **300k timesteps**, and each episode randomizes the start–goal pair and obstacle configuration (domain randomization).
+
+**APF (classical baseline).** We implement an **Artificial Potential Field (APF)** controller with goal attraction and obstacle repulsion within an influence radius. APF is reactive and does not require training, but is known to suffer from local minima in cluttered environments.
+
+All controllers run under the **same dynamics, sensing, and collision checking** for a fair comparison.
+
+### Evaluation
+
+Controllers are evaluated on **unseen randomized layouts** using:
+- Success rate (reach goal without collision)
+- Collision rate
+- Path length
+- Episode time
+- Energy per step (average squared acceleration)
+- Smoothness per step (average squared change in acceleration / jerk proxy)
+
+### Results Summary
+
+On randomized test environments, the learned PPO policy achieves substantially higher reliability and better control quality than APF:
+
+- **Success rate:** PPO **0.76** vs. APF **0.00**  
+- **Collision rate:** PPO **0.22** vs. APF **0.39**  
+- **Avg path length (m):** PPO **5.02** vs. APF **4.75**  
+- **Energy per step:** PPO **1.06** vs. APF **8.91**  
+- **Smoothness (jerk/step):** PPO **0.10** vs. APF **1.25**
+
+Overall, PPO generalizes to unseen static obstacle layouts and produces trajectories that are **safer, smoother, and more energy-efficient**, while APF frequently fails in clutter due to local minima.
+
+### Limitations and Future Work
+
+This project is limited to a **2D** setting with **static obstacles** and a restricted **180° range-sensor observation**. Performance degrades in densely cluttered or narrow environments, and reward tuning remains sensitive.
+
+Future directions include:
+- Extending to 3D UAV dynamics
+- Adding temporal memory (e.g., recurrent policies) to mitigate partial observability
+- Handling dynamic obstacles and sensor noise
+- Evaluating in higher-fidelity simulators and exploring sim-to-real transfer
