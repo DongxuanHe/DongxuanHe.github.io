@@ -144,6 +144,7 @@ On randomized test environments, the learned PPO policy achieves substantially h
 <figure class="figure text-center">
   <img src="/assets/img/uav/learning_curve_success.png"
        class="figure-img img-fluid rounded"
+       style="max-width: 800px; width: 100%;"
        alt="Learning curve: success rate vs timesteps">
   <figcaption class="figure-caption">
     Learning curve showing success rate as a function of training timesteps for the PPO policy.
@@ -157,6 +158,7 @@ On randomized test environments, the learned PPO policy achieves substantially h
   <div class="col-md-6 text-center">
     <img src="/assets/img/uav/fig_success_rate.png"
          class="img-fluid rounded"
+         style="max-width: 420px; width: 100%;"
          alt="Final success rate comparison">
     <p class="text-muted small mt-2">
       Final success rate on unseen randomized environments (PPO vs APF).
@@ -166,6 +168,7 @@ On randomized test environments, the learned PPO policy achieves substantially h
   <div class="col-md-6 text-center">
     <img src="/assets/img/uav/fig_energy.png"
          class="img-fluid rounded"
+         style="max-width: 420px; width: 100%;"
          alt="Energy per step comparison">
     <p class="text-muted small mt-2">
       Average energy consumption per step (PPO vs APF).
@@ -179,7 +182,7 @@ Overall, PPO generalizes to unseen static obstacle layouts and produces trajecto
 
 ### Limitations and Future Work
 
-This project is limited to a 2D setting with static obstacles and a restricted 180° range-sensor observation. Performance degrades in densely cluttered or narrow environments, and reward tuning remains sensitive.
+This project is limited to a **2D** setting with static obstacles and a restricted **180° range-sensor** observation. Performance degrades in densely cluttered or narrow environments, and reward tuning remains sensitive.
 
 Future directions include:
 - Extending to 3D UAV dynamics
