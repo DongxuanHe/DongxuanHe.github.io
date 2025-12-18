@@ -12,7 +12,7 @@ related_publications: false
 
 Active learning (AL) reduces annotation cost by iteratively selecting the most informative unlabeled samples for labeling, rather than labeling the full dataset upfront. In this project, we conduct a survey-driven, controlled empirical comparison of representative AL acquisition strategies on **Fashion-MNIST**, using a single unified experimental pipeline so that observed performance differences primarily stem from the query strategy itself.
 
-This is a collaborative projec* conducted under a shared experimental protocol. While multiple acquisition methods are evaluated, this page places particular emphasis on **BALD (Bayesian Active Learning by Disagreement)**, whose behavior exhibits an especially instructive accuracy–efficiency trade-off. :contentReference[oaicite:0]{index=0}
+This is a collaborative project conducted under a shared experimental protocol. While multiple acquisition methods are evaluated, this page places particular emphasis on **BALD (Bayesian Active Learning by Disagreement)**, whose behavior exhibits an especially instructive accuracy–efficiency trade-off. :contentReference[oaicite:0]{index=0}
 
 
 ## Experimental Framework (Unified Protocol)
@@ -26,7 +26,7 @@ We follow a standard pool-based active learning loop:
 5. Retrain the model and repeat
 
 - Dataset: Fashion-MNIST (10 classes, 28×28 grayscale)
-- Initial labeled set: $|L_0| = 500$
+- Initial labeled set: $L_0 = 500$
 - Query budget: $b = 100$ samples per round  
 - Rounds: 100 (total labeled samples: 10,000)  
 - Model: MLP with a 256-dimensional hidden layer and linear softmax head  
