@@ -134,11 +134,11 @@ Controllers are evaluated on unseen randomized layouts using:
 
 On randomized test environments, the learned PPO policy achieves substantially higher reliability and better control quality than APF:
 
-- Success rate: PPO 0.76 vs. APF 0.00  
-- Collision rate: PPO 0.22 vs. APF 0.39
-- Avg path length (m): PPO 5.02 vs. APF 4.75
-- Energy per step: PPO 1.06 vs. APF 8.91  
-- Smoothness (jerk/step): PPO 0.10 vs. APF 1.25
+- Success rate ↑: PPO 0.76 vs. APF 0.00  
+- Collision rate ↓: PPO 0.22 vs. APF 0.39  
+- Avg path length (m): PPO 5.02 vs. APF 4.75  
+- Energy per step ↓: PPO 1.06 vs. APF 8.91  
+- Smoothness (jerk/step) ↓: PPO 0.10 vs. APF 1.25
 
 <!-- Learning curve (single figure) -->
 <div class="text-center">
