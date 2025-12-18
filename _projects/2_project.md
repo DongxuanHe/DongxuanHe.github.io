@@ -30,21 +30,28 @@ Reinforcement learning offers a model-free alternative: the UAV directly learns 
 
 ### Problem Formulation
 
-We formulate the task as a **partially observable Markov Decision Process (POMDP)**.
+We formulate the task as a partially observable Markov Decision Process **(POMDP)**.
 
-**Dynamics (2D double integrator).** The UAV state evolves with a simple inertial model using continuous acceleration commands, with velocity and actions clipped for feasibility.
+Dynamics (2D double integrator): The UAV state evolves with a simple inertial model using continuous acceleration commands, with velocity and actions clipped for feasibility.
 
-**Observations (local sensing only).**
-- Goal-relative position: \((x_g-x,\, y_g-y)\)  
-- Current velocity: \((v_x,\, v_y)\)  
-- Ray-based range sensor distances: \(N\) rays over a **180° field of view**  
+Observations (local sensing only):
+- Goal-relative position:
+$$
+(x_g - x,\; y_g - y)
+$$
+- Current velocity:
+$$
+(v_x,\; v_y)
+$$
+- Ray-based range sensor distances: $N$ rays over a 180° field of view
 
 No global map is provided.
 
-**Actions (continuous control).**
+Actions (continuous control):
 - Planar acceleration command: \((a_x, a_y)\)
 
-**Reward design.** The shaped reward encourages:
+Reward design:
+The shaped reward encourages:
 - progress toward the goal,
 - a goal-reaching bonus,
 - collision and safety-margin penalties,
@@ -56,13 +63,13 @@ No global map is provided.
 
 **PPO (learned policy).** We train a continuous-control policy using **Proximal Policy Optimization (PPO)** with Stable-Baselines3. Training runs for **300k timesteps**, and each episode randomizes the start–goal pair and obstacle configuration (domain randomization).
 
-**APF (classical baseline).** We implement an **Artificial Potential Field (APF)** controller with goal attraction and obstacle repulsion within an influence radius. APF is reactive and does not require training, but is known to suffer from local minima in cluttered environments.
+**APF (classical baseline):** We implement an Artificial Potential Field (APF) controller with goal attraction and obstacle repulsion within an influence radius. APF is reactive and does not require training, but is known to suffer from local minima in cluttered environments.
 
-All controllers run under the **same dynamics, sensing, and collision checking** for a fair comparison.
+All controllers run under the same dynamics, sensing, and collision checking for a fair comparison.
 
 ### Evaluation
 
-Controllers are evaluated on **unseen randomized layouts** using:
+Controllers are evaluated on unseen randomized layouts using:
 - Success rate (reach goal without collision)
 - Collision rate
 - Path length
@@ -74,11 +81,11 @@ Controllers are evaluated on **unseen randomized layouts** using:
 
 On randomized test environments, the learned PPO policy achieves substantially higher reliability and better control quality than APF:
 
-- **Success rate:** PPO **0.76** vs. APF **0.00**  
-- **Collision rate:** PPO **0.22** vs. APF **0.39**  
-- **Avg path length (m):** PPO **5.02** vs. APF **4.75**  
-- **Energy per step:** PPO **1.06** vs. APF **8.91**  
-- **Smoothness (jerk/step):** PPO **0.10** vs. APF **1.25**
+- Success rate: PPO 0.76 vs. APF 0.00  
+- Collision rate: PPO 0.22 vs. APF 0.39
+- Avg path length (m): PPO 5.02 vs. APF 4.75
+- Energy per step: PPO 1.06 vs. APF 8.91  
+- Smoothness (jerk/step): PPO 0.10 vs. APF 1.25
 
 Overall, PPO generalizes to unseen static obstacle layouts and produces trajectories that are **safer, smoother, and more energy-efficient**, while APF frequently fails in clutter due to local minima.
 
