@@ -10,10 +10,10 @@ related_publications: false
 
 ### Overview
 
-This project investigates a **model-free deep reinforcement learning** approach for **UAV obstacle avoidance** under **partial observability**.  
-A continuous-control policy is trained to navigate from a start location to a goal while avoiding **randomized static obstacles** in a lightweight 2D simulation.
+This project investigates a **model-free deep reinforcement learning** approach for*UAV obstacle avoidance under partial observability.  
+A continuous-control policy is trained to navigate from a start location to a goal while avoiding randomized static obstacles in a lightweight 2D simulation.
 
-Rather than focusing on algorithmic novelty, this work emphasizes **end-to-end problem formulation**, **fair baseline comparison**, and **systematic evaluation** as a first research-style RL project.
+Rather than focusing on algorithmic novelty, this work emphasizes **end-to-end problem formulation**, fair baseline comparison, and systematic evaluation as a first research-style RL project.
 
 ### Key Topics
 - Reactive obstacle avoidance under partial observability (POMDP)  
@@ -50,14 +50,67 @@ No global map is provided.
 Actions (continuous control):
 - Planar acceleration command: $(a_x, a_y)$
 
-Reward design:
-The shaped reward encourages:
-- progress toward the goal,
-- a goal-reaching bonus,
-- collision and safety-margin penalties,
-- energy (control effort) regularization,
-- smoothness (jerk) regularization,
-- a small per-step time penalty.
+**Reward Design**
+
+The shaped reward encourages safe, smooth, and efficient goal-directed behavior.  
+At each timestep $t$, the total reward is defined as:
+
+$$
+r_t
+= r_t^{\text{prog}}
++ r_t^{\text{goal}}
++ r_t^{\text{col}}
++ r_t^{\text{safe}}
++ r_t^{\text{energy}}
++ r_t^{\text{smooth}}
++ r_t^{\text{time}} .
+$$
+
+Each component is defined as follows.
+
+**Goal progress**
+$$
+r_t^{\text{prog}} = \alpha \left( \lVert g_t \rVert - \lVert g_{t+1} \rVert \right),
+$$
+which rewards reduction in distance to the goal.
+
+**Goal-reaching bonus**
+$$
+r_t^{\text{goal}} = \kappa \, \mathbb{I}\!\left[\lVert g_{t+1} \rVert \le r_{\text{goal}} \right],
+$$
+where $\mathbb{I}[\cdot]$ is the indicator function.
+
+**Collision penalty**
+$$
+r_t^{\text{col}} = -\beta \, \mathbb{I}[\text{collision}],
+$$
+which strongly penalizes unsafe trajectories.
+
+**Safety-margin penalty**
+$$
+r_t^{\text{safe}} = -\beta_m \,
+\mathbb{I}\!\left[ \min_i \lVert x_t - c_i \rVert \le r_i + m \right],
+$$
+penalizing proximity to obstacles within a safety margin $m$.
+
+**Energy regularization**
+$$
+r_t^{\text{energy}} = -\lambda \lVert a_t \rVert^2,
+$$
+discouraging excessive control effort.
+
+**Smoothness (jerk) regularization**
+$$
+r_t^{\text{smooth}} = -\mu \lVert a_t - a_{t-1} \rVert^2,
+$$
+penalizing abrupt changes in control.
+
+**Time penalty**
+$$
+r_t^{\text{time}} = -\eta,
+$$
+encouraging efficient task completion.
+
 
 ### Methods
 
@@ -87,11 +140,11 @@ On randomized test environments, the learned PPO policy achieves substantially h
 - Energy per step: PPO 1.06 vs. APF 8.91  
 - Smoothness (jerk/step): PPO 0.10 vs. APF 1.25
 
-Overall, PPO generalizes to unseen static obstacle layouts and produces trajectories that are **safer, smoother, and more energy-efficient**, while APF frequently fails in clutter due to local minima.
+Overall, PPO generalizes to unseen static obstacle layouts and produces trajectories that are safer, smoother, and more energy-efficient, while APF frequently fails in clutter due to local minima.
 
 ### Limitations and Future Work
 
-This project is limited to a **2D** setting with **static obstacles** and a restricted **180° range-sensor observation**. Performance degrades in densely cluttered or narrow environments, and reward tuning remains sensitive.
+This project is limited to a 2D setting with static obstacles and a restricted 180° range-sensor observation. Performance degrades in densely cluttered or narrow environments, and reward tuning remains sensitive.
 
 Future directions include:
 - Extending to 3D UAV dynamics
