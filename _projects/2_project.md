@@ -48,7 +48,7 @@ $$
 No global map is provided.
 
 Actions (continuous control):
-- Planar acceleration command: \((a_x, a_y)\)
+- Planar acceleration command: $(a_x, a_y)$
 
 Reward design:
 The shaped reward encourages:
