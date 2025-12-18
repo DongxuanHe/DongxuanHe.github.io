@@ -141,20 +141,23 @@ On randomized test environments, the learned PPO policy achieves substantially h
 - Smoothness (jerk/step): PPO 0.10 vs. APF 1.25
 
 <!-- Learning curve (single figure) -->
-<figure class="figure text-center">
+<div class="text-center">
   <img src="/assets/img/uav/learning_curve_success.png"
-       class="figure-img img-fluid rounded d-block mx-auto"
+       class="img-fluid rounded d-block mx-auto"
        style="max-width: 500px; width: 100%;"
        alt="Learning curve: success rate vs timesteps">
-  <figcaption class="figure-caption">
+
+  <p class="text-muted small mt-2">
     Learning curve showing success rate as a function of training timesteps for the PPO policy.
-  </figcaption>
-</figure>
+  </p>
+</div>
 
 <p class="mt-2">
-  The learning curve indicates stable convergence after approximately <strong>100k timesteps</strong>,
-  suggesting that the policy consistently improves under domain randomization.
+  The learning curve indicates stable convergence after approximately
+  <strong>170k timesteps</strong>, suggesting that the policy consistently improves under
+  domain randomization.
 </p>
+
 
 <div class="mt-4"></div>
 
