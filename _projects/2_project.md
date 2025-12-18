@@ -143,13 +143,18 @@ On randomized test environments, the learned PPO policy achieves substantially h
 <!-- Learning curve (single figure) -->
 <figure class="figure text-center">
   <img src="/assets/img/uav/learning_curve_success.png"
-       class="figure-img img-fluid rounded"
-       style="max-width: 800px; width: 100%;"
+       class="figure-img img-fluid rounded d-block mx-auto"
+       style="max-width: 700px; width: 100%;"
        alt="Learning curve: success rate vs timesteps">
   <figcaption class="figure-caption">
     Learning curve showing success rate as a function of training timesteps for the PPO policy.
   </figcaption>
 </figure>
+
+<p class="mt-2">
+  The learning curve indicates stable convergence after approximately <strong>100k timesteps</strong>,
+  suggesting that the policy consistently improves under domain randomization.
+</p>
 
 <div class="mt-4"></div>
 
@@ -158,7 +163,7 @@ On randomized test environments, the learned PPO policy achieves substantially h
   <div class="col-md-6 text-center">
     <img src="/assets/img/uav/fig_success_rate.png"
          class="img-fluid rounded"
-         style="max-width: 420px; width: 100%;"
+         style="max-width: 360px; width: 100%;"
          alt="Final success rate comparison">
     <p class="text-muted small mt-2">
       Final success rate on unseen randomized environments (PPO vs APF).
@@ -168,7 +173,7 @@ On randomized test environments, the learned PPO policy achieves substantially h
   <div class="col-md-6 text-center">
     <img src="/assets/img/uav/fig_energy.png"
          class="img-fluid rounded"
-         style="max-width: 420px; width: 100%;"
+         style="max-width: 360px; width: 100%;"
          alt="Energy per step comparison">
     <p class="text-muted small mt-2">
       Average energy consumption per step (PPO vs APF).
