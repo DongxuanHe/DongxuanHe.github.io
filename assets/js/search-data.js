@@ -87,7 +87,7 @@ ninja.data = [{
               window.location.href = "/projects/3_project/";
             },},{id: "projects-active-learning-strategies-for-image-classification",
           title: 'Active Learning Strategies for Image Classification',
-          description: "A comparative study of five active learning sampling strategies aimed at reducing labeling cost while maintaining model accuracy.",
+          description: "A controlled empirical study of active learning sampling strategies on Fashion-MNIST, with a focused analysis of BALD.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{id: "projects-project-5",
