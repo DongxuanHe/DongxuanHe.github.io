@@ -100,11 +100,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-convex-optimization-frank-wolfe-methods-and-worst-case-analysis",
+          title: 'Convex Optimization: Frank-Wolfe Methods and Worst-Case Analysis',
+          description: "Performance estimation and SDP-based analysis for convex optimization algorithms",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/Cov(2)_project/";
+              window.location.href = "/projects/Cov(2)/";
             },},{id: "projects-multi-agent-reinforcement-learning-and-sim2real-transfer",
           title: 'Multi-Agent Reinforcement Learning and Sim2Real Transfer',
           description: "Bridging simulation and real-world domains in multi-agent learning",
@@ -114,7 +114,7 @@ ninja.data = [{
           title: 'Reinforcement Learning for UAV Obstacle Avoidance',
           description: "Learning a reactive UAV controller in a 2D partially observable environment with randomized obstacle layouts",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/uavRL(3)/";
+              window.location.href = "/projects/UAV_RL(3)/";
             },},{
         id: 'social-email',
         title: 'email',
