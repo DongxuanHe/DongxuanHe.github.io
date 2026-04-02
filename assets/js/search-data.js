@@ -109,7 +109,7 @@ ninja.data = [{
           title: 'Multi-Agent Reinforcement Learning and Sim2Real Transfer',
           description: "Bridging simulation and real-world domains in multi-agent learning",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/MARL(1)_project/";
+              window.location.href = "/projects/MARL(1)/";
             },},{id: "projects-reinforcement-learning-for-uav-obstacle-avoidance",
           title: 'Reinforcement Learning for UAV Obstacle Avoidance',
           description: "Learning a reactive UAV controller in a 2D partially observable environment with randomized obstacle layouts",
