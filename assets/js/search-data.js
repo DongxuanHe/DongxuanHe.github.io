@@ -70,11 +70,6 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/master/";
-            },},{id: "projects-robust-slam-enhancement-proposal",
-          title: 'Robust SLAM Enhancement Proposal',
-          description: "A research-oriented project exploring methods to improve the robustness, adaptability, and reliability of SLAM systems in real-world environments.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
             },},{id: "projects-active-learning-strategies-for-image-classification",
           title: 'Active Learning Strategies for Image Classification',
           description: "A controlled empirical study of active learning sampling strategies on Fashion-MNIST, with a focused analysis of BALD.",
@@ -105,6 +100,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-robust-slam-enhancement-proposal",
+          title: 'Robust SLAM Enhancement Proposal',
+          description: "A research-oriented project exploring methods to improve the robustness, adaptability, and reliability of SLAM systems in real-world environments.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Cov(2)_project/";
             },},{id: "projects-multi-agent-reinforcement-learning-and-sim2real-transfer",
           title: 'Multi-Agent Reinforcement Learning and Sim2Real Transfer',
           description: "Bridging simulation and real-world domains in multi-agent learning",
