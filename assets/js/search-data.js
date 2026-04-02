@@ -114,7 +114,7 @@ ninja.data = [{
           title: 'Reinforcement Learning for UAV Obstacle Avoidance',
           description: "Learning a reactive UAV controller in a 2D partially observable environment with randomized obstacle layouts",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/UAV_RL(3)/";
+              window.location.href = "/projects/uavRL(3)/";
             },},{
         id: 'social-email',
         title: 'email',
