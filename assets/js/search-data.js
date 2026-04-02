@@ -75,11 +75,6 @@ ninja.data = [{
           description: "Bridging simulation and real-world domains in multi-agent learning",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-reinforcement-learning-for-uav-obstacle-avoidance",
-          title: 'Reinforcement Learning for UAV Obstacle Avoidance',
-          description: "Learning a reactive UAV controller in a 2D partially observable environment with randomized obstacle layouts",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
             },},{id: "projects-robust-slam-enhancement-proposal",
           title: 'Robust SLAM Enhancement Proposal',
           description: "A research-oriented project exploring methods to improve the robustness, adaptability, and reliability of SLAM systems in real-world environments.",
@@ -115,6 +110,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-reinforcement-learning-for-uav-obstacle-avoidance",
+          title: 'Reinforcement Learning for UAV Obstacle Avoidance',
+          description: "Learning a reactive UAV controller in a 2D partially observable environment with randomized obstacle layouts",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/uavRL_project/";
             },},{
         id: 'social-email',
         title: 'email',
