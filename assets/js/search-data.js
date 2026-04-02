@@ -100,9 +100,9 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "projects-robust-slam-enhancement-proposal",
-          title: 'Robust SLAM Enhancement Proposal',
-          description: "A research-oriented project exploring methods to improve the robustness, adaptability, and reliability of SLAM systems in real-world environments.",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Cov(2)_project/";
             },},{id: "projects-multi-agent-reinforcement-learning-and-sim2real-transfer",
