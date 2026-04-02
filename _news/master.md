@@ -11,4 +11,4 @@ I am excited to share that I have joined the **Institute for Control, Optimizati
 
 ![Joining ICON](../../assets/img/news/ICON.jpg){: style="width:70%; display:block; margin:auto;" }
 
-My research will focus on the intersection of **Machine Learning** and **Robotics**, including topics such as **visual SLAM**, **multi-agent reinforcement learning**, and **Sim2Real transfer**. I’m particularly interested in building learning-based perception and control systems that bridge the gap between simulation and real-world robotics.
+My research focuses on the intersection of **Machine Learning** and **Robotics**, including topics such as **multi-agent reinforcement learning** and **convex optimization**. I’m particularly interested in developing learning-based methods that enable efficient and reliable cooperation in complex robotic systems.
