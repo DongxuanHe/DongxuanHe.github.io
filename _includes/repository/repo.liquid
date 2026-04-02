@@ -1,13 +1,32 @@
 {% assign repo_url = include.repository | split: '/' %}
+{% assign repo_name = repo_url[1] %}
 
 <div class="repo p-3 m-2 border rounded" style="width: 320px;">
-  <a href="https://github.com/{{ include.repository }}" style="text-decoration: none;">
+  <a href="https://github.com/{{ include.repository }}" style="text-decoration: none; color: inherit;">
     <h5 style="margin-bottom: 6px;">
-      {{ repo_url[1] }}
+      {{ repo_name }}
     </h5>
   </a>
 
   <p style="margin: 0; font-size: 0.9rem; color: #666;">
-    {{ repo_url[0] }}/{{ repo_url[1] }}
+    {{ repo_url[0] }}/{{ repo_name }}
+  </p>
+
+  <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.92rem; line-height: 1.45;">
+    {% if repo_name == "HTTPServer" %}
+      C++ HTTP/1.0 web server with static file serving, directory browsing, Basic Authentication, concurrent request handling, and dynamic module loading via shared libraries.
+    {% elsif repo_name == "Shell" %}
+      Unix-style shell built with C/C++, Flex, and Bison, supporting pipelines, redirection, background jobs, signal handling, subshells, and wildcard/environment expansion.
+    {% elsif repo_name == "MemoryAllocation" %}
+      Custom memory allocator implementing malloc, free, calloc, and realloc with segregated free lists, coalescing, boundary tags, and heap growth through sbrk.
+    {% elsif repo_name == "BashShellUtilities" %}
+      Collection of Bash-based Unix utilities for password checking, disk usage inspection, and process information retrieval through the Linux /proc interface.
+    {% elsif repo_name == "InteractiveSystem" %}
+      TensorFlow/Keras text classification project for four-category sequence classification using embedding-based neural models and supervised training on labeled text data.
+    {% elsif repo_name == "SentimentalAnalysis" %}
+      TensorFlow/Keras sentiment analysis project for binary movie review classification on the IMDB dataset using embedding and pooled text representations.
+    {% else %}
+      GitHub repository.
+    {% endif %}
   </p>
 </div>
