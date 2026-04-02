@@ -2,7 +2,7 @@
 layout: page
 title: "Convex Optimization: Frank-Wolfe Methods and Worst-Case Analysis"
 description: "Performance estimation and SDP-based analysis for convex optimization algorithms"
-img: /assets/img/convex_opt.png
+img: /assets/img/convex optimization/conv.png
 importance: 2
 category: work
 related_publications: false
