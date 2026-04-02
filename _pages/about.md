@@ -28,8 +28,6 @@ latest_posts:
 
 Hi 👋 I’m a **Robotics** master’s student at Purdue University, working under the Institute for Control, Optimization, and Networks (ICON). I earned my B.S. in **Computer Science** with a minor in Electrical & Computer Engineering at Purdue in three years.
 
-My current research lies at the intersection of Machine Learning and Robotics systems, with a focus on Visual SLAM, Multi-Agent Reinforcement Learning, and Sim2Real transfer. I’m particularly interested in building learning-based localization pipelines and adaptive control systems that bridge the gap between simulation and the real world.
+My current research lies at the intersection of Machine Learning and Robotics systems, with a focus on optimization, learning, and generalization in complex multi-agent and real-world systems. I’m passionate about **Machine Learning** and **Robotics**, especially how to make agents learn and cooperate efficiently and reliably in complex environments.
 
-I’m passionate about **Machine Learning** and **Robotics**, especially how learning-based methods can enable robots to perceive, adapt, and act intelligently in complex environments — from data-driven perception and sensor fusion to policy transfer and decision-making in dynamic real-world settings.
-
-Last updated: Oct 2025
+Last updated: April 2026
