@@ -105,9 +105,9 @@ ninja.data = [{
           description: "Performance estimation and SDP-based analysis for convex optimization algorithms",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Cov(2)/";
-            },},{id: "projects-multi-agent-reinforcement-learning-and-sim2real-transfer",
-          title: 'Multi-Agent Reinforcement Learning and Sim2Real Transfer',
-          description: "Bridging simulation and real-world domains in multi-agent learning",
+            },},{id: "projects-curriculum-learning-for-multi-agent-rl",
+          title: 'Curriculum Learning for Multi-Agent RL',
+          description: "Selecting training tasks to accelerate learning on a target multi-agent task",
           section: "Projects",handler: () => {
               window.location.href = "/projects/MARL(1)/";
             },},{id: "projects-reinforcement-learning-for-uav-obstacle-avoidance",
@@ -115,6 +115,16 @@ ninja.data = [{
           description: "Learning a reactive UAV controller in a 2D partially observable environment with randomized obstacle layouts",
           section: "Projects",handler: () => {
               window.location.href = "/projects/UAV_RL(3)/";
+            },},{id: "projects-multi-robot-cooperative-pushing",
+          title: 'Multi-Robot Cooperative Pushing',
+          description: "Learning to push and align objects with two robots using limited egocentric observations",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/cooperative-pushing/";
+            },},{id: "projects-grid-expansion-and-data-center-interconnection",
+          title: 'Grid Expansion and Data-Center Interconnection',
+          description: "Planning grid upgrades and phased data-center admissions under network and investment constraints",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/grid-expansion/";
             },},{
         id: 'social-email',
         title: 'email',
