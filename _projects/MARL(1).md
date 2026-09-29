@@ -1,31 +1,37 @@
 ---
 layout: page
-title: Multi-Agent Reinforcement Learning and Sim2Real Transfer
-description: Bridging simulation and real-world domains in multi-agent learning
+title: Curriculum Learning for Multi-Agent RL
+description: Selecting training tasks to accelerate learning on a target multi-agent task
 img: /assets/img/multi-agents/MARL.png
 importance: 1
 category: work
-related_publications: true
+img_alt: A group of learning agents connected through a shared learning system
+related_publications: false
 ---
 
 ### Overview
 
-This project focuses on **multi-agent reinforcement learning (MARL)** and its **Sim2Real (simulation-to-reality) transfer**.  
-The goal is to enable cooperative and competitive agents trained in simulation environments to generalize effectively to real-world settings.
+**SCALE Robotics Lab, Purdue University**<br>
+Advisor: **Rohan Paleja**
 
-We explore questions such as:
-- How to achieve **robust coordination** among multiple agents in dynamic, partially observable environments.
-- How to design **policy architectures and training curricula** that facilitate transfer from simulation to physical systems.
-- How domain randomization, adaptation, and representation learning can mitigate the Sim2Real gap.
+This project investigates **curriculum learning for multi-agent reinforcement learning (MARL)**. The goal is to accelerate learning on a target task by selecting useful intermediate training tasks and transferring the policy between them.
+
+The setting consists of simulated combat tasks with varying numbers of allied and opposing agents. These task configurations provide a space of possible training experiences, raising a central question: **which task should the agents train on next to improve learning on the target task?**
+
+### Task Selection and Policy Transfer
+
+I am developing a task-selection algorithm that considers both **transfer difficulty** and **estimated learning gains on the target task**. The selected task is used for further policy training before the next selection decision.
+
+The aim is to choose intermediate tasks that are learnable from the current policy and useful for the target objective. Progress on an intermediate task is therefore considered in relation to its contribution to target-task learning.
+
+### Current Focus
+
+Current work investigates how **gradient information** and **task configuration features** can inform task selection. This is an ongoing research direction; the objective is to understand which signals help identify useful training tasks and accelerate target-task learning.
 
 ### Key Topics
-- Decentralized training with centralized critics  
-- Robust policy transfer and domain adaptation  
-- Multi-robot collaboration and swarm intelligence  
-- Benchmarking in simulated and real-world robotic tasks
 
-### Future Work
-
-<div class="text-center mt-4">
-  <em style="color:gray;">🕒 Publication and more detailed content coming soon...</em>
-</div>
+- Multi-agent reinforcement learning
+- Curriculum learning and adaptive task selection
+- Policy transfer across task configurations
+- Transfer difficulty and target-task learning gains
+- Gradient information for learning guidance

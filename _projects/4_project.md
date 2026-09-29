@@ -3,7 +3,7 @@ layout: page
 title: Active Learning Strategies for Image Classification
 description: A controlled empirical study of active learning sampling strategies on Fashion-MNIST, with a focused analysis of BALD.
 img: /assets/img/al.png
-importance: 4
+importance: 6
 category: work
 related_publications: false
 ---
