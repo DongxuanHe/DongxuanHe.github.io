@@ -54,5 +54,5 @@ The closing discussion covered using expert knowledge or interventions to resolv
 
 These notes summarize the seminar rather than reproduce its proofs. The following papers provide the precise assumptions and guarantees behind the two main methods:
 
-- Tong Xu, Armeen Taeb, Simge Küçükyavuz, and Ali Shojaie. [Integer programming for learning directed acyclic graphs from nonidentifiable Gaussian models](https://doi.org/10.1093/biomet/asaf032). *Biometrika*, 2025.
+- Tong Xu, Armeen Taeb, Simge Küçükyavuz, and Ali Shojaie. [Integer programming for learning directed acyclic graphs from nonidentifiable Gaussian models](https://doi.org/10.1093/biomet/asaf032). _Biometrika_, 2025.
 - Tong Xu, Simge Küçükyavuz, Ali Shojaie, and Armeen Taeb. [An Asymptotically Optimal Coordinate Descent Algorithm for Learning Bayesian Networks from Gaussian Models](https://arxiv.org/abs/2408.11977).
