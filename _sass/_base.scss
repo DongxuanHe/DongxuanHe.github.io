@@ -554,7 +554,12 @@ footer.sticky-bottom {
 
   h1 {
     color: var(--global-theme-color);
-    font-size: 5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 }
 
