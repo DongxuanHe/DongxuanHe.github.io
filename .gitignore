@@ -11,3 +11,6 @@ assets/libs/
 node_modules/
 vendor
 .idea
+
+# Local originals for seminar blog posts; do not publish to the public repository.
+/_blog_sources/

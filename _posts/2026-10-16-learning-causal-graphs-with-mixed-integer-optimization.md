@@ -6,6 +6,7 @@ description: "Seminar notes on DAG learning, statistically motivated early stopp
 categories: [optimization]
 tags: [seminar, causal-discovery, mixed-integer-optimization]
 related_posts: false
+source_archive: _blog_sources/2026-10-16-learning-causal-graphs-with-mixed-integer-optimization/
 ---
 
 **Speaker:** Simge Küçükyavuz, Northwestern University<br>
