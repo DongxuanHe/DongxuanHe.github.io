@@ -44,15 +44,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-no-recent-blog-posts",
+        },{id: "post-learning-causal-graphs-with-mixed-integer-optimization",
         
-          title: "No recent blog posts.",
+          title: "Learning Causal Graphs with Mixed-Integer Optimization",
         
-        description: "",
+        description: "Seminar notes on DAG learning, statistically motivated early stopping, and coordinate descent.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/no-current/";
+            window.location.href = "/blog/2026/learning-causal-graphs-with-mixed-integer-optimization/";
           
         },
       },{id: "books-the-godfather",
