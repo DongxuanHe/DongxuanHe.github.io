@@ -4,8 +4,11 @@ layout: default
 <div class="post">
   <header class="post-header">
     {% if page.type == 'categories' %}
-      <h1 class="post-title"><i class="fa-solid fa-tag fa-sm"></i> {{ page.title }}</h1>
-      <p class="post-description">an archive of {{ page.collection_name }} in this category</p>
+      {% assign series = site.data.seminar_series[page.title] %}
+      <h1 class="post-title"><i class="fa-solid fa-tag fa-sm"></i> {{ series.label | default: page.title }}</h1>
+      <p class="post-description">
+        {% if series.description %}{{ series.description }}{% else %}an archive of {{ page.collection_name }} in this category{% endif %}
+      </p>
     {% elsif page.type == 'year' %}
       <h1 class="post-title"><i class="fa-solid fa-calendar fa-sm"></i> {{ page.date | date: '%Y' }}</h1>
       <p class="post-description">an archive of {{ page.collection_name }} from this year</p>

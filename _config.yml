@@ -88,7 +88,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: "Seminar notes"
-blog_description: "Summaries, questions, and ideas from robotics and optimization seminars."
+blog_description: "Summaries, questions, and ideas from Purdue ICON and Optimization seminars."
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 

@@ -45,10 +45,13 @@ layout: default
       {% if categories != '' %}
         &nbsp; &middot; &nbsp;
         {% for category in page.categories %}
+          {% assign series = site.data.seminar_series[category] %}
           {% if url_beginning == '/blog/' %}
-            <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}"> <i class="fa-solid fa-tag fa-sm"></i> {{ category -}}</a>
+            <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">
+              <i class="fa-solid fa-tag fa-sm"></i> {{ series.label | default: category -}}
+            </a>
           {% else %}
-            <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
+            <i class="fa-solid fa-tag fa-sm"></i> {{ series.label | default: category }}
           {% endif %}
           {% unless forloop.last %}
             &nbsp;

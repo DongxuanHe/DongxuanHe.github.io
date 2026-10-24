@@ -563,6 +563,57 @@ footer.sticky-bottom {
   }
 }
 
+.archive .table {
+  color: var(--global-text-color);
+}
+
+.seminar-series {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+
+  .seminar-series-card {
+    display: block;
+    padding: 1.25rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+    background: var(--global-card-bg-color);
+    color: var(--global-text-color);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--global-theme-color);
+    }
+  }
+
+  .seminar-series-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+
+    strong {
+      color: var(--global-theme-color);
+      font-size: 1.15rem;
+    }
+  }
+
+  .seminar-series-count {
+    color: var(--global-text-color-light);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .seminar-series-description {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
 .tag-category-list {
   border-bottom: 1px solid var(--global-divider-color);
   text-align: center;

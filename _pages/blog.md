@@ -32,19 +32,22 @@ pagination:
 {% assign blog_categories = site.categories | sort %}
 {% if blog_categories.size > 0 %}
 
-  <div class="tag-category-list">
-    <ul class="p-0 m-0">
+  <nav class="seminar-series" aria-label="Seminar series">
       {% for category in blog_categories %}
-        <li>
-          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category[0] | slugify | prepend: '/blog/category/' | relative_url }}">{{ category[0] | capitalize }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
+        {% assign series = site.data.seminar_series[category[0]] %}
+        {% assign note_count = category[1] | size %}
+        <a class="seminar-series-card" href="{{ category[0] | slugify | prepend: '/blog/category/' | relative_url }}">
+          <span class="seminar-series-heading">
+            <strong>{{ series.label | default: category[0] | escape }}</strong>
+            <span class="seminar-series-count">{{ note_count }} {% if note_count == 1 %}note{% else %}notes{% endif %}</span>
+          </span>
+          {% if series.description %}<span class="seminar-series-description">{{ series.description }}</span>{% endif %}
+        </a>
       {% endfor %}
-    </ul>
-  </div>
+  </nav>
   {% endif %}
+
+<h2>All notes</h2>
 
 {% assign featured_posts = site.posts | where: "featured", "true" %}
 {% if featured_posts.size > 0 %}
@@ -155,8 +158,9 @@ pagination:
           {% if categories != "" %}
           &nbsp; &middot; &nbsp;
             {% for category in post.categories %}
+            {% assign series = site.data.seminar_series[category] %}
             <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">
-              <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
+              <i class="fa-solid fa-tag fa-sm"></i> {{ series.label | default: category }}</a>
               {% unless forloop.last %}
                 &nbsp;
               {% endunless %}
