@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-learning-causal-graphs-with-mixed-integer-optimization",
+        },{id: "post-identifying-discrete-state-network-dynamics",
+        
+          title: "Identifying Discrete-State Network Dynamics",
+        
+        description: "ICON seminar notes on Bernoulli autoregressive models, network identification, and finite-sample estimation guarantees.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/identifying-discrete-state-network-dynamics/";
+          
+        },
+      },{id: "post-learning-causal-graphs-with-mixed-integer-optimization",
         
           title: "Learning Causal Graphs with Mixed-Integer Optimization",
         
