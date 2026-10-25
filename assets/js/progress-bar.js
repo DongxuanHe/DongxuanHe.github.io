@@ -46,9 +46,14 @@ function getCurrentScrollPosition() {
 }
 
 function initializeProgressElement() {
-  let navbarHeight = $("#navbar").outerHeight(true);
+  const sidebar = document.querySelector(".site-sidebar");
+  const navbarHeight = sidebar
+    ? window.matchMedia("(min-width: 992px)").matches
+      ? 0
+      : sidebar.querySelector(".sidebar-brand-row").getBoundingClientRect().height
+    : $("#navbar").outerHeight(true);
   $("body").css({ "padding-top": navbarHeight });
-  $("progress-container").css({ "padding-top": navbarHeight });
+  $(".progress-container").css({ "padding-top": navbarHeight });
   progressBar.css({ top: navbarHeight });
   progressBar.attr({
     max: getDistanceToScroll(),

@@ -1,0 +1,240 @@
+// Shared left navigation and responsive page frame.
+:root {
+  --sidebar-width: 248px;
+  --sidebar-bg: #f7f8fa;
+  --sidebar-active-bg: #e8f1f9;
+}
+
+html[data-theme="dark"] {
+  --sidebar-bg: #181a1d;
+  --sidebar-active-bg: #26323b;
+}
+
+body.has-sidebar {
+  margin-left: var(--sidebar-width);
+  padding-top: 0;
+}
+
+.has-sidebar > .container[role="main"] {
+  max-width: calc(#{$max-content-width} + 96px);
+  padding: 16px 48px 56px;
+}
+
+.site-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 1030;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  padding: 44px 24px 28px;
+  border-right: 1px solid var(--global-divider-color);
+  background: var(--sidebar-bg);
+  overflow-y: auto;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .sidebar-brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    margin-bottom: 42px;
+  }
+
+  .sidebar-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--global-text-color);
+  }
+
+  .sidebar-name {
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+
+  .sidebar-affiliation {
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+  }
+
+  .sidebar-toggle {
+    display: none;
+  }
+
+  .sidebar-panel {
+    display: flex !important;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .nav-link {
+      display: block;
+      padding: 11px 16px;
+      border-radius: 7px;
+      color: var(--global-text-color-light);
+      font-size: 0.95rem;
+      text-transform: capitalize;
+
+      &:hover {
+        color: var(--global-theme-color);
+        background: var(--sidebar-active-bg);
+      }
+    }
+
+    .active > .nav-link {
+      color: var(--global-theme-color);
+      background: var(--sidebar-active-bg);
+      font-weight: 500;
+    }
+
+    .dropdown-menu {
+      position: static;
+      float: none;
+      border: 0;
+      background: transparent;
+    }
+  }
+
+  .sidebar-bottom {
+    margin-top: auto;
+    padding-top: 40px;
+  }
+
+  .sidebar-tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--global-divider-color);
+
+    #search-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      color: var(--global-text-color-light);
+      font-size: 0.85rem;
+    }
+
+    #light-toggle {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+
+      &:hover {
+        background: var(--sidebar-active-bg);
+      }
+
+      i {
+        padding: 0;
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  .sidebar-social {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    padding-top: 22px;
+    font-size: 1.15rem;
+
+    a,
+    i::before {
+      color: var(--global-text-color-light);
+    }
+
+    a:hover i::before {
+      color: var(--global-theme-color);
+    }
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 3px;
+  }
+}
+
+.has-sidebar #progress {
+  top: 0;
+  left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+}
+
+@media (max-width: 991.98px) {
+  body.has-sidebar {
+    margin-left: 0;
+    padding-top: 72px;
+  }
+
+  .has-sidebar > .container[role="main"] {
+    padding: 0 24px 40px;
+  }
+
+  .site-sidebar {
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    max-height: 100vh;
+    max-height: 100dvh;
+    padding: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--global-divider-color);
+
+    .sidebar-brand-row {
+      min-height: 72px;
+      margin-bottom: 0;
+      padding: 12px 24px;
+    }
+
+    .sidebar-name {
+      font-size: 1.1rem;
+    }
+
+    .sidebar-affiliation {
+      display: none;
+    }
+
+    .sidebar-toggle {
+      display: block;
+      padding: 8px;
+    }
+
+    .sidebar-panel {
+      display: block !important;
+      flex: none;
+      padding: 0 24px 24px;
+
+      &.collapse:not(.show) {
+        display: none !important;
+      }
+    }
+
+    .sidebar-bottom {
+      padding-top: 24px;
+    }
+  }
+
+  .has-sidebar #progress {
+    top: 72px;
+    left: 0;
+    width: 100%;
+  }
+}
