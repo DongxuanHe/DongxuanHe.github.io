@@ -1,44 +1,34 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
-
+<div class="post about-page">
   <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
+    <section class="about-intro" aria-labelledby="about-name">
+      {% if page.profile.image %}
+        <div class="about-portrait">
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+          {% assign profile_image_alt = page.profile.image_alt | default: site.title %}
+          {% include figure.liquid loading="eager" path=profile_image_path sizes="(max-width: 767px) 160px, 200px" alt=profile_image_alt cache_bust=true %}
+        </div>
+      {% endif %}
+      <div class="about-summary">
+        <header class="post-header">
+          <h1 class="post-title" id="about-name">
+            {% if site.title == 'blank' %}
+              {{ site.first_name }}
+              {{ site.middle_name }}
+              {{ site.last_name }}
+            {% else %}
+              {{ site.title }}
+            {% endif %}
+          </h1>
+          {% if page.subtitle %}
+            <p class="desc">{{ page.subtitle }}</p>
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+        </header>
+        <div class="about-bio">{{ content }}</div>
       </div>
-    {% endif %}
-
-    <div class="clearfix">{{ content }}</div>
+    </section>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}

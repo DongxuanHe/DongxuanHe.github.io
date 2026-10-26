@@ -4,16 +4,11 @@ title: about
 permalink: /
 
 profile:
-  align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Institute for Control, Optimization, and Networks (ICON)</p>
-    <p>Purdue University</p>
-    <p>West Lafayette, Indiana</p>
+  image_alt: Dongxuan He
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # social links are shown in the sidebar
 
 announcements:
   enabled: true # includes a list of news items
@@ -26,8 +21,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi 👋 I’m a **Robotics** master’s student at Purdue University, working under the Institute for Control, Optimization, and Networks (ICON). I earned my B.S. in **Computer Science** with a minor in Electrical & Computer Engineering at Purdue in three years.
+I’m a master’s student in Robotics at Purdue University. My interests lie in robot learning, multi-agent reinforcement learning, and optimization, especially how agents can learn and cooperate efficiently in complex environments.
 
-My current research lies at the intersection of Machine Learning and Robotics systems, with a focus on optimization, learning, and generalization in complex multi-agent and real-world systems. I’m passionate about **Machine Learning** and **Robotics**, especially how to make agents learn and cooperate efficiently and reliably in complex environments.
+Previously, I completed my B.S. in Computer Science at Purdue in three years, with a minor in Electrical and Computer Engineering.
 
-Last updated: April 2026
+Last updated: October 2026

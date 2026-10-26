@@ -1,0 +1,63 @@
+// A compact portrait and introduction above the homepage updates.
+.about-page {
+  .about-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 200px;
+    grid-template-areas: "summary portrait";
+    align-items: start;
+    gap: 36px;
+    margin-bottom: 36px;
+  }
+
+  .about-portrait {
+    grid-area: portrait;
+
+    figure {
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+
+  .about-summary {
+    grid-area: summary;
+  }
+
+  .post-header {
+    margin-bottom: 22px;
+  }
+
+  .post-title {
+    margin: 0 0 10px;
+    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+  }
+
+  .about-bio {
+    line-height: 1.7;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .about-intro {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: "portrait" "summary";
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .about-portrait {
+      width: 160px;
+    }
+  }
+}
