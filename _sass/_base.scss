@@ -746,13 +746,13 @@ footer.sticky-bottom {
     }
 
     .card-title {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       line-height: 1.35;
       font-weight: 500;
     }
 
     .card-text {
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.55;
       margin-bottom: 0;
     }
@@ -760,6 +760,77 @@ footer.sticky-bottom {
 
   .col {
     padding-bottom: 1rem;
+  }
+
+  .project-card {
+    height: auto;
+  }
+
+  .project-card-main {
+    display: block;
+    color: var(--global-text-color);
+
+    &:focus-visible {
+      outline: 2px solid var(--global-theme-color);
+      outline-offset: -2px;
+    }
+  }
+
+  .project-card-extra {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .project-overview {
+    margin-top: 1rem;
+    border-top: 1px solid var(--global-divider-color);
+    font-size: 1rem;
+    line-height: 1.65;
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1rem;
+      cursor: pointer;
+      list-style: none;
+      color: var(--global-text-color-light);
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::after {
+        content: "+";
+        font-size: 1.4rem;
+        line-height: 1;
+      }
+
+      &:hover {
+        color: var(--global-theme-color);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--global-theme-color);
+        outline-offset: 4px;
+      }
+    }
+
+    &[open] summary::after {
+      content: "−";
+    }
+
+    p {
+      margin: 1rem 0 0;
+    }
   }
 
   .grid-sizer,

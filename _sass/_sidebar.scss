@@ -1,6 +1,6 @@
 // Shared left navigation and responsive page frame.
 :root {
-  --sidebar-width: 248px;
+  --sidebar-width: 264px;
   --sidebar-bg: #f7f8fa;
   --sidebar-active-bg: #e8f1f9;
 }
@@ -85,7 +85,7 @@ body.has-sidebar {
       padding: 11px 16px;
       border-radius: 7px;
       color: var(--global-text-color-light);
-      font-size: 0.95rem;
+      font-size: 1rem;
       text-transform: capitalize;
 
       &:hover {

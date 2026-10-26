@@ -7,6 +7,13 @@ img_alt: Two mobile robots pushing a rectangular object toward a target pose
 importance: 3
 category: research
 related_publications: false
+overview: >-
+  This ongoing project extends EgoPush to two mobile robots that must move and
+  align a rectangular object using limited egocentric observations, without
+  explicit inter-robot communication. Policies are trained with parameter-shared
+  MAPPO under centralized training and decentralized execution. Current work
+  evaluates target-pose alignment in simulation and examines unsuccessful
+  rollouts to understand coordination failures.
 ---
 
 ### Overview

@@ -6,6 +6,13 @@ img: /assets/img/al.png
 importance: 6
 category: course
 related_publications: false
+overview: >-
+  This course project compares pool-based active learning strategies on
+  Fashion-MNIST using a shared classifier, labeling budget, and training protocol.
+  Methods include BALD, BADGE, CSAL, uncertainty sampling, and Core-Set selection,
+  with random sampling as a baseline. The focused BALD analysis examines how
+  uncertainty estimates evolve as labeled data accumulate and how label
+  efficiency trades off against computational cost.
 ---
 
 ## Overview

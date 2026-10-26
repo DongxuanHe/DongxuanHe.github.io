@@ -6,6 +6,13 @@ img: /assets/img/uav.png
 importance: 5
 category: course
 related_publications: false
+overview: >-
+  This course project trains a PPO policy to navigate a UAV from start to goal
+  while avoiding static obstacles in a lightweight 2D simulation. The policy uses
+  local range sensing and goal-relative information rather than a global map.
+  Randomized layouts support evaluation on unseen environments, with an Artificial
+  Potential Field controller as a baseline. Evaluation considers success,
+  collisions, path length, energy, and control smoothness.
 ---
 
 ### Overview

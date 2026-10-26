@@ -7,6 +7,13 @@ img_alt: A transmission network connecting to a data center with staged capacity
 importance: 4
 category: research
 related_publications: false
+overview: >-
+  This project studies how grid upgrades and phased data-center connections can
+  be planned together over multiple years. A mixed-integer model jointly schedules
+  upgrades and annual load admissions under DC power-flow constraints, investment
+  budgets, and construction lead times. Current studies use Virginia data-center
+  records and a synthetic transmission network to examine the effects of
+  connection locations and power-import limits.
 ---
 
 ### Overview

@@ -7,6 +7,12 @@ importance: 1
 category: research
 img_alt: A group of learning agents connected through a shared learning system
 related_publications: false
+overview: >-
+  This ongoing project studies how to select intermediate training tasks that help
+  a multi-agent policy learn a target task. Simulated combat tasks vary in allied
+  and opposing team sizes. Task selection considers transfer difficulty and
+  estimated gains on the target task, with current work exploring gradient
+  information and task features as guidance for curriculum design.
 ---
 
 ### Overview

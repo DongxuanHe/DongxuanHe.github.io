@@ -6,6 +6,13 @@ img: /assets/img/convex optimization/conv1.png
 importance: 2
 category: research
 related_publications: false
+overview: >-
+  This project studies the worst-case performance of Frank-Wolfe methods for smooth
+  convex optimization and the design of fixed-step variants. Using interpolation
+  conditions and the Performance Estimation Problem framework, it formulates
+  semidefinite programs to investigate convergence bounds and their tightness.
+  Ongoing work examines numerical verification and the search for improved
+  methods within a parameterized algorithm family.
 ---
 
 ### Overview
