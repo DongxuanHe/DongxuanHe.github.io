@@ -1,6 +1,8 @@
+@use "sass:math";
+
 // Shared left navigation and responsive page frame.
 :root {
-  --sidebar-width: 248px;
+  --sidebar-width: 15.5rem;
   --sidebar-bg: #f7f8fa;
   --sidebar-active-bg: #e8f1f9;
 }
@@ -16,8 +18,8 @@ body.has-sidebar {
 }
 
 .has-sidebar > .container[role="main"] {
-  max-width: calc(#{$max-content-width} + 96px);
-  padding: 16px 48px 56px;
+  max-width: calc(#{math.div($max-content-width, 16px) * 1rem} + 6rem);
+  padding: 1rem 3rem 3.5rem;
 }
 
 .site-sidebar {
@@ -27,7 +29,7 @@ body.has-sidebar {
   display: flex;
   flex-direction: column;
   width: var(--sidebar-width);
-  padding: 44px 24px 28px;
+  padding: 2.75rem 1.5rem 1.75rem;
   border-right: 1px solid var(--global-divider-color);
   background: var(--sidebar-bg);
   overflow-y: auto;
