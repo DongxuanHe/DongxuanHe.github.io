@@ -4,7 +4,7 @@ title: Curriculum Learning for Multi-Agent RL
 description: Selecting training tasks to accelerate learning on a target multi-agent task
 img: /assets/img/multi-agents/MARL.png
 importance: 1
-category: work
+category: research
 img_alt: A group of learning agents connected through a shared learning system
 related_publications: false
 ---

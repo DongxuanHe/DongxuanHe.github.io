@@ -1,65 +1,38 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
 description:
 nav: true
-nav_order: 3
-display_categories: [work, fun]
+nav_order: 1
 horizontal: false
+project_sections:
+  - category: research
+    title: Research Projects
+  - category: course
+    title: Course Projects
 ---
 
-<!-- pages/projects.md -->
 <div class="projects">
-{% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
+  {% for section in page.project_sections %}
+    {% assign sorted_projects = site.projects | where: "category", section.category | sort: "importance" %}
+    {% if sorted_projects.size > 0 %}
+      <section class="mb-5" aria-labelledby="{{ section.category }}-projects">
+        <h2 class="project-section-title mb-3" id="{{ section.category }}-projects">{{ section.title }}</h2>
+        {% if page.horizontal %}
+          <div class="row row-cols-1 row-cols-md-2">
+            {% for project in sorted_projects %}
+              {% include projects_horizontal.liquid %}
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="row row-cols-1 row-cols-md-3">
+            {% for project in sorted_projects %}
+              {% include projects.liquid %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </section>
+    {% endif %}
   {% endfor %}
-
-{% else %}
-
-<!-- Display projects without categories -->
-
-{% assign sorted_projects = site.projects | sort: "importance" %}
-
-  <!-- Generate cards for each project -->
-
-{% if page.horizontal %}
-
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-{% endif %}
 </div>

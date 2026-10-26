@@ -4,7 +4,7 @@ title: Reinforcement Learning for UAV Obstacle Avoidance
 description: Learning a reactive UAV controller in a 2D partially observable environment with randomized obstacle layouts
 img: /assets/img/uav.png
 importance: 5
-category: work
+category: course
 related_publications: false
 ---
 

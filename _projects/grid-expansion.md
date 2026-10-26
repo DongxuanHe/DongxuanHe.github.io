@@ -5,7 +5,7 @@ description: Planning grid upgrades and phased data-center admissions under netw
 img: /assets/img/projects/grid-expansion.svg
 img_alt: A transmission network connecting to a data center with staged capacity expansion over time
 importance: 4
-category: work
+category: research
 related_publications: false
 ---
 

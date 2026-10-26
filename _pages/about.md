@@ -2,6 +2,7 @@
 layout: about
 title: about
 permalink: /
+subtitle: Master’s student in Robotics at <a href="https://www.purdue.edu/">Purdue University</a>
 
 profile:
   image: prof_pic.jpg
@@ -21,8 +22,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I’m a master’s student in Robotics at Purdue University. My interests lie in robot learning, multi-agent reinforcement learning, and optimization, especially how agents can learn and cooperate efficiently in complex environments.
+My research interests include robot learning, multi-agent systems, and optimization. I am particularly interested in how agents learn and cooperate in complex environments, and in the design and analysis of optimization algorithms.
 
-Previously, I completed my B.S. in Computer Science at Purdue in three years, with a minor in Electrical and Computer Engineering.
+Previously, I completed my B.S. in Computer Science at Purdue University, with a minor in Electrical and Computer Engineering.
+
+I am seeking PhD opportunities for Fall 2027.
 
 Last updated: October 2026

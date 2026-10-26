@@ -5,7 +5,7 @@ description: Learning to push and align objects with two robots using limited eg
 img: /assets/img/projects/cooperative-pushing.svg
 img_alt: Two mobile robots pushing a rectangular object toward a target pose
 importance: 3
-category: work
+category: research
 related_publications: false
 ---
 

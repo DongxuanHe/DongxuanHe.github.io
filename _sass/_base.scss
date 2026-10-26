@@ -768,6 +768,12 @@ footer.sticky-bottom {
     margin-bottom: 10px;
   }
 
+  .project-section-title {
+    color: var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding-bottom: 0.35rem;
+  }
+
   h2.category {
     color: var(--global-divider-color);
     border-bottom: 1px solid var(--global-divider-color);
