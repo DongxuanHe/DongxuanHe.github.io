@@ -2,12 +2,6 @@
  * Content
  ******************************************************************************/
 
-html {
-  // 16px on narrow screens, 18px at 1440px, and at most 20px by default.
-  // Percentages retain the browser's preferred base font size.
-  font-size: clamp(100%, calc(75% + 0.416667vw), 125%);
-}
-
 body {
   padding-bottom: 0;
   color: var(--global-text-color);
