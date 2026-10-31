@@ -17,6 +17,8 @@ layout: default
   {% if url_beginning == '/blog/' %}
     {% if page.tags contains 'seminar' %}
       {% include blog_breadcrumbs.liquid seminar=true %}
+    {% elsif page.tags contains 'event' %}
+      {% include blog_breadcrumbs.liquid event=true %}
     {% else %}
       {% include blog_breadcrumbs.liquid %}
     {% endif %}
@@ -52,10 +54,15 @@ layout: default
       {% if categories != '' %}
         &nbsp; &middot; &nbsp;
         {% for category in page.categories %}
-          {% assign series = site.data.seminar_series[category] %}
+          {% assign series = null %}
+          {% if page.tags contains 'seminar' %}
+            {% assign series = site.data.seminar_series[category] %}
+          {% elsif page.tags contains 'event' %}
+            {% assign series = site.data.event_series[category] %}
+          {% endif %}
           {% if url_beginning == '/blog/' %}
             {% assign category_url = category | slugify | prepend: '/blog/category/' %}
-            {% if page.tags contains 'seminar' and series.url %}{% assign category_url = series.url %}{% endif %}
+            {% if series.url %}{% assign category_url = series.url %}{% endif %}
             <a href="{{ category_url | relative_url }}"> <i class="fa-solid fa-tag fa-sm"></i> {{ series.label | default: category -}}</a>
           {% else %}
             <i class="fa-solid fa-tag fa-sm"></i> {{ series.label | default: category }}

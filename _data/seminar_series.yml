@@ -1,8 +1,8 @@
 icon:
-  label: ICON
-  url: /blog/seminar-notes/icon/
-  description: Control, networks, robotics, and learning from Purdue ICON seminars.
+  label: Control, Learning & Robotics
+  url: /blog/seminar-notes/#icon
+  description: Notes from Purdue’s ICON seminar series, covering control, learning, robotics, and related topics.
 optimization:
-  label: Optimization
-  url: /blog/seminar-notes/optimization/
-  description: Optimization methods, theory, and applications from the optimization seminar series.
+  label: Optimization & Statistics
+  url: /blog/seminar-notes/#optimization
+  description: Notes from Purdue’s Quantitative Methods seminar series, covering optimization, statistics, operations research, and their applications.

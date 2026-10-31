@@ -2,4 +2,8 @@
 - title: Seminar notes
   url: /blog/seminar-notes/
   tag: seminar
-  description: Summaries, questions, and ideas from Purdue ICON and Optimization seminars.
+  description: Notes and reflections from seminars at Purdue.
+- title: Event notes
+  url: /blog/event-notes/
+  tag: event
+  description: Notes and reflections from conferences, summits, and workshops.

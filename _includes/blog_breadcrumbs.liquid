@@ -1,7 +1,10 @@
 <nav class="blog-breadcrumbs" aria-label="Breadcrumb">
-  <a href="{{ '/blog/' | relative_url }}">Blog</a>
+  <a href="{{ '/blog/' | relative_url }}"><span class="blog-back-arrow" aria-hidden="true">←</span> Blog</a>
   {% if include.seminar %}
     <span aria-hidden="true">/</span>
     <a href="{{ '/blog/seminar-notes/' | relative_url }}">Seminar notes</a>
+  {% elsif include.event %}
+    <span aria-hidden="true">/</span>
+    <a href="{{ '/blog/event-notes/' | relative_url }}">Event notes</a>
   {% endif %}
 </nav>

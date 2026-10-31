@@ -1,0 +1,117 @@
+---
+layout: default
+---
+<div class="post" data-notes-index data-empty-message="{{ page.notes_empty_message | escape }}">
+  {% include blog_breadcrumbs.liquid %}
+
+  <div class="header-bar">
+    <h1>{{ page.title }}</h1>
+    <h2>{{ page.description }}</h2>
+  </div>
+
+  {% assign notes_posts = site.posts | where_exp: 'post', 'post.tags contains page.notes_tag' %}
+  {% assign notes_series = site.data[page.notes_series] %}
+
+  <div class="seminar-series" role="group" aria-label="Filter notes by category">
+    {% for entry in notes_series %}
+      {% assign series_key = entry[0] %}
+      {% assign series = entry[1] %}
+      {% assign series_posts = notes_posts | where_exp: 'post', 'post.categories contains series_key' %}
+      {% assign note_count = series_posts | size %}
+      {% if note_count > 0 or page.show_empty_series %}
+        <button
+          type="button"
+          class="seminar-series-card"
+          data-seminar-filter="{{ series_key | escape }}"
+          data-series-label="{{ series.label | escape }}"
+          aria-pressed="false"
+          aria-controls="seminar-note-list"
+        >
+          <span class="seminar-series-heading">
+            <strong>{{ series.label | escape }}</strong>
+            <span class="seminar-series-count">
+              {{- note_count }}
+              {% if note_count == 1 %}note{% else %}notes{% endif -%}
+            </span>
+          </span>
+          {% if series.description -%}
+            <span class="seminar-series-description">{{ series.description }}</span>
+          {%- endif %}
+        </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="seminar-notes-heading">
+    <h2 data-notes-heading>All notes</h2>
+    <div class="seminar-notes-tools">
+      <button type="button" class="seminar-show-all" data-seminar-filter="all" aria-controls="seminar-note-list" hidden>Show all notes</button>
+      <div class="seminar-search" role="search" aria-label="Search {{ page.title | escape }}">
+        <label class="sr-only" for="seminar-search">Search note titles and article text</label>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input
+          type="search"
+          id="seminar-search"
+          data-notes-search
+          placeholder="Search titles and text…"
+          aria-controls="seminar-note-list"
+          autocomplete="off"
+        >
+      </div>
+    </div>
+  </div>
+  <p class="seminar-search-status" role="status" aria-atomic="true" data-notes-status></p>
+
+  <ul class="post-list" id="seminar-note-list">
+    {% for post in notes_posts %}
+      {% assign keywords = post.tags | where_exp: 'tag', 'tag != page.notes_tag' | uniq | slice: 0, 4 %}
+
+      <li
+        data-seminar-categories="{{ post.categories | join: ' ' | escape }}"
+        data-note-search="{{ post.title | escape }} {{ post.description | escape }} {% if post.external_source == blank %}{{ post.content | markdownify | strip_html | escape }}{% else %}{{ post.feed_content | strip_html | escape }}{% endif %}"
+      >
+        {% if post.thumbnail %}
+          <div class="row">
+            <div class="col-sm-9">
+        {% endif %}
+        <h3>
+          {% if post.redirect == blank %}
+            <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          {% elsif post.redirect contains '://' %}
+            <a class="post-title" href="{{ post.redirect }}" target="_blank">{{ post.title }}</a>
+            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          {% else %}
+            <a class="post-title" href="{{ post.redirect | relative_url }}">{{ post.title }}</a>
+          {% endif %}
+        </h3>
+        <p>{{ post.description }}</p>
+        <p class="post-meta">
+          <i class="fa-solid fa-calendar fa-sm" aria-hidden="true"></i>
+          <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %d, %Y' }}</time>
+        </p>
+        {% if keywords.size > 0 %}
+          <p class="post-tags seminar-note-keywords">
+            {% for tag in keywords %}
+              <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">#{{ tag | escape }}</a>
+            {% endfor %}
+          </p>
+        {% endif %}
+
+        {% if post.thumbnail %}
+          </div>
+
+          <div class="col-sm-3">
+            <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="object-fit: cover; height: 90%" alt="image">
+          </div>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="seminar-search-empty" data-notes-empty hidden>{{ page.notes_empty_message | escape }}</p>
+
+  <script defer src="{{ '/assets/js/notes-filter.js' | relative_url | bust_file_cache }}"></script>
+</div>

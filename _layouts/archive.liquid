@@ -3,8 +3,13 @@ layout: default
 ---
 <div class="post">
   {% assign archive_series = site.data.seminar_series[page.title] %}
+  {% assign event_series = site.data.event_series[page.title] %}
   {% if page.type == 'categories' and archive_series %}
     {% include blog_breadcrumbs.liquid seminar=true %}
+  {% elsif page.type == 'categories' and event_series %}
+    {% include blog_breadcrumbs.liquid event=true %}
+  {% elsif page.type == 'tags' and page.title == 'event' %}
+    {% include blog_breadcrumbs.liquid event=true %}
   {% elsif page.type == 'tags' and page.title == 'seminar' %}
     {% include blog_breadcrumbs.liquid seminar=true %}
   {% else %}
@@ -12,7 +17,7 @@ layout: default
   {% endif %}
   <header class="post-header">
     {% if page.type == 'categories' %}
-      {% assign series = site.data.seminar_series[page.title] %}
+      {% assign series = archive_series | default: event_series %}
       <h1 class="post-title"><i class="fa-solid fa-tag fa-sm"></i> {{ series.label | default: page.title }}</h1>
       <p class="post-description">
         {% if series.description %}{{ series.description }}{% else %}an archive of {{ page.collection_name }} in this category{% endif %}
