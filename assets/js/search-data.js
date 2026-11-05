@@ -37,7 +37,62 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-identifying-discrete-state-network-dynamics",
+        },{id: "post-toward-dexterous-mobile-manipulation",
+        
+          title: "Toward Dexterous Mobile Manipulation",
+        
+        description: "Nikolaus Correll on combining industrial automation, language models, optimization, and robot learning for dexterous mobile manipulation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/toward-dexterous-mobile-manipulation/";
+          
+        },
+      },{id: "post-statistical-inference-with-ai-generated-predictive-distributions",
+        
+          title: "Statistical Inference with AI-Generated Predictive Distributions",
+        
+        description: "Using predictive distributions, score calibration, and cross-fitting to improve statistical inference with limited labeled data.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/statistical-inference-with-ai-generated-predictive-distributions/";
+          
+        },
+      },{id: "post-robotics-and-embodied-ai-from-demos-to-deployment",
+        
+          title: "Robotics and Embodied AI: From Demos to Deployment",
+        
+        description: "Lightning talks and a panel on physical grounding, reactive planning, interpretable policies, multi-robot coordination, and deployment safety.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/robotics-and-embodied-ai-from-demos-to-deployment/";
+          
+        },
+      },{id: "post-ai-and-big-data-for-transportation-systems",
+        
+          title: "AI and Big Data for Transportation Systems",
+        
+        description: "A transportation panel excerpt on validating vehicle data, improving road design, and evaluating autonomous systems.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/ai-and-big-data-for-transportation-systems/";
+          
+        },
+      },{id: "post-from-ai-capabilities-to-useful-tools",
+        
+          title: "From AI Capabilities to Useful Tools",
+        
+        description: "Charles Elliott’s keynote on product judgment, scientific workflows, and oversight for long-running AI agents.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/from-ai-capabilities-to-useful-tools/";
+          
+        },
+      },{id: "post-identifying-discrete-state-network-dynamics",
         
           title: "Identifying Discrete-State Network Dynamics",
         
