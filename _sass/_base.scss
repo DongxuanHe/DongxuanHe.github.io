@@ -963,6 +963,10 @@ footer.sticky-bottom {
     display: block;
     color: var(--global-text-color);
 
+    .card-body {
+      padding-bottom: 1rem;
+    }
+
     &:focus-visible {
       outline: 2px solid var(--global-theme-color);
       outline-offset: -2px;
@@ -981,8 +985,12 @@ footer.sticky-bottom {
     font-size: 0.95rem;
   }
 
-  .project-overview {
+  .project-links + .project-overview {
     margin-top: 1rem;
+  }
+
+  .project-overview {
+    margin-top: 0;
     border-top: 1px solid var(--global-divider-color);
     font-size: 1rem;
     line-height: 1.65;
@@ -992,7 +1000,7 @@ footer.sticky-bottom {
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding-top: 1rem;
+      padding-top: 0.875rem;
       cursor: pointer;
       list-style: none;
       color: var(--global-text-color-light);
@@ -1022,7 +1030,7 @@ footer.sticky-bottom {
     }
 
     p {
-      margin: 1rem 0 0;
+      margin: 0.75rem 0 0;
     }
   }
 
