@@ -702,7 +702,18 @@ footer.sticky-bottom {
     display: none !important;
   }
 
+  .header-bar {
+    border-bottom: 0;
+    padding-bottom: 0;
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
   .seminar-notes-heading {
+    border-top: 1px solid var(--global-divider-color);
+    padding-top: 1.5rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -800,10 +811,16 @@ footer.sticky-bottom {
     font-size: 0.9rem;
   }
 
+  .post-list > li {
+    border-bottom-color: color-mix(in srgb, var(--global-divider-color) 65%, transparent);
+    padding-block: 1.5rem;
+  }
+
   .seminar-note-keywords {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem 0.85rem;
+    margin-bottom: 0;
   }
 }
 

@@ -28,7 +28,7 @@
     for (const card of cards) card.setAttribute("aria-pressed", String(card.dataset.seminarFilter === current));
     heading.textContent = current === "all" ? "All notes" : `${labels.get(current)} notes`;
     showAll.hidden = current === "all";
-    status.textContent = `${count} ${count === 1 ? "note" : "notes"}${terms.length ? " found" : ""} · ${heading.textContent}`;
+    status.textContent = `${count} ${count === 1 ? "note" : "notes"}${terms.length ? " found" : ""}`;
     empty.hidden = count !== 0;
     if (notes.length === 0) empty.textContent = section.dataset.emptyMessage || "No notes yet.";
     else if (terms.length) empty.textContent = "No matching notes. Try another keyword or select a different category.";
