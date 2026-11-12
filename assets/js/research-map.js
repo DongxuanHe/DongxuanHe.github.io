@@ -28,10 +28,10 @@
         topic.style.height = "auto";
       });
 
-      const nodeHeight = Math.max(compact ? 76 : 210, ...topics.map((topic) => topic.getBoundingClientRect().height));
+      const nodeHeight = Math.max(compact ? 76 : 0, ...topics.map((topic) => topic.getBoundingClientRect().height));
       const centerX = width / 2;
-      const centerY = radius + nodeHeight / 2 + 12;
-      const height = centerY + radius / 2 + nodeHeight / 2 + 12;
+      const centerY = radius / 2 + nodeHeight / 2 + 12;
+      const height = centerY + radius + nodeHeight / 2 + 12;
 
       canvas.style.height = `${height}px`;
       Object.assign(hub.style, {
@@ -42,7 +42,7 @@
       });
       connectors.setAttribute("viewBox", `0 0 ${width} ${height}`);
 
-      const lines = [-90, 30, 150].map((angle, index) => {
+      const lines = [-150, -30, 90].map((angle, index) => {
         const radians = (angle * Math.PI) / 180;
         const dx = Math.cos(radians);
         const dy = Math.sin(radians);
