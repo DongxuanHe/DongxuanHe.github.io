@@ -5,6 +5,9 @@ description: A controlled empirical study of active learning sampling strategies
 img: /assets/img/al.png
 importance: 6
 category: course
+research_topic: other
+research_label: Active Learning
+research_thumbnail: /assets/img/research-map/active-learning.webp
 related_publications: false
 overview: >-
   This course project compares pool-based active learning strategies on

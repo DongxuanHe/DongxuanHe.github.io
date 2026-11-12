@@ -6,6 +6,9 @@ img: /assets/img/projects/cooperative-pushing.svg
 img_alt: Two mobile robots pushing a rectangular object toward a target pose
 importance: 3
 category: research
+research_topic: mas
+research_label: Cooperative Pushing
+research_thumbnail: /assets/img/projects/cooperative-pushing.svg
 related_publications: false
 overview: >-
   This ongoing project extends EgoPush to two mobile robots that must move and

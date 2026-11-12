@@ -1,0 +1,54 @@
+<div class="research-map" data-research-map>
+  <div class="research-map__canvas">
+    <header class="research-map__hub">
+      <h1>Research</h1>
+      <p>My work</p>
+    </header>
+
+    <svg class="research-map__connections" aria-hidden="true" focusable="false"></svg>
+
+    <div class="research-map__topics">
+      {% for topic in site.data.research_topics %}
+        {% assign topic_projects = site.projects | where: 'research_topic', topic.id | sort: 'importance' %}
+        <a class="research-map__topic" href="{{ topic.url | relative_url }}" data-research-topic="{{ topic.id | escape }}">
+          <h2>{{ topic.title | escape }}</h2>
+          {% if topic.description %}
+            <p class="research-map__description">{{ topic.description | escape }}</p>
+          {% endif %}
+          {% if topic_projects.size > 0 %}
+            <ul class="research-map__works">
+              {% for project in topic_projects %}
+                {% assign thumbnail = project.research_thumbnail | default: project.img %}
+                <li class="research-map__work">
+                  {% if thumbnail %}
+                    <img src="{{ thumbnail | relative_url }}" alt="" width="34" height="28" loading="lazy" decoding="async">
+                  {% endif %}
+                  <span class="research-map__work-title">{{ project.research_label | default: project.title | escape }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <span class="research-map__enter">Enter topic <span aria-hidden="true">↗</span></span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="research-map__compact-summary" aria-label="Work by topic">
+    {% for topic in site.data.research_topics %}
+      {% assign topic_projects = site.projects | where: 'research_topic', topic.id | sort: 'importance' %}
+      <section>
+        <h2><a href="{{ topic.url | relative_url }}">{{ topic.title | escape }}</a></h2>
+        {% if topic_projects.size > 0 %}
+          <p>
+            {% for project in topic_projects %}
+              {{ project.research_label | default: project.title | escape }}{% unless forloop.last %} · {% endunless %}
+            {% endfor %}
+          </p>
+        {% endif %}
+      </section>
+    {% endfor %}
+  </div>
+
+  <p class="research-map__caption">Choose an area to view the work and notes within it.</p>
+</div>

@@ -1,0 +1,17 @@
+---
+layout: page
+---
+<p class="mb-4">
+  <a href="{{ '/projects/' | relative_url }}">&larr; All research areas</a>
+</p>
+
+{{ content }}
+
+{% assign topic_projects = site.projects | where: 'research_topic', page.research_topic | sort: 'importance' %}
+<div class="projects">
+  <div class="row row-cols-1 row-cols-md-2">
+    {% for project in topic_projects %}
+      {% include projects.liquid %}
+    {% endfor %}
+  </div>
+</div>

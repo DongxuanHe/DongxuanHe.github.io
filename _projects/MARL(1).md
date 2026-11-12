@@ -5,6 +5,9 @@ description: Selecting training tasks to accelerate learning on a target multi-a
 img: /assets/img/multi-agents/MARL.png
 importance: 1
 category: research
+research_topic: mas
+research_label: Curriculum Learning
+research_thumbnail: /assets/img/research-map/curriculum.webp
 img_alt: A group of learning agents connected through a shared learning system
 related_publications: false
 overview: >-

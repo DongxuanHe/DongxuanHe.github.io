@@ -6,6 +6,9 @@ img: /assets/img/projects/grid-expansion.svg
 img_alt: A transmission network connecting to a data center with staged capacity expansion over time
 importance: 4
 category: research
+research_topic: optimization
+research_label: Grid Expansion Planning
+research_thumbnail: /assets/img/projects/grid-expansion.svg
 related_publications: false
 overview: >-
   This project studies how grid upgrades and phased data-center connections can

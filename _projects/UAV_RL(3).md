@@ -5,6 +5,9 @@ description: Learning a reactive UAV controller in a 2D partially observable env
 img: /assets/img/uav.png
 importance: 5
 category: course
+research_topic: other
+research_label: UAV Obstacle Avoidance
+research_thumbnail: /assets/img/research-map/uav.webp
 related_publications: false
 overview: >-
   This course project trains a PPO policy to navigate a UAV from start to goal

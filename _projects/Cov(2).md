@@ -5,6 +5,9 @@ description: "Performance estimation and SDP-based analysis for convex optimizat
 img: /assets/img/convex optimization/conv1.png
 importance: 2
 category: research
+research_topic: optimization
+research_label: Frank–Wolfe Analysis
+research_thumbnail: /assets/img/research-map/frank-wolfe.webp
 related_publications: false
 overview: >-
   This project studies the worst-case performance of Frank-Wolfe methods for smooth

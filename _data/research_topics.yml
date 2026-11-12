@@ -1,0 +1,12 @@
+- id: mas
+  title: Multi-Agent Systems
+  url: /research/multi-agent-systems/
+  description: Learning, coordination, and transfer across agents.
+- id: optimization
+  title: Mathematical Optimization
+  url: /research/optimization/
+  description: Algorithm analysis and constrained planning.
+- id: other
+  title: Other Work
+  url: /research/other-work/
+  description: Course projects in reinforcement learning and active learning.
