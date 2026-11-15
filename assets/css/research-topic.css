@@ -1,7 +1,7 @@
 .has-sidebar > .container.research-topic-container[role="main"] {
   max-width: 1320px;
   margin-top: 0;
-  padding: 32px clamp(28px, 3vw, 44px) 40px;
+  padding: 50px clamp(40px, 6.25vw, 90px) 40px;
 }
 
 .post-header {
