@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-toward-dexterous-mobile-manipulation",
+        },{id: "post-success-conditioning-as-policy-improvement",
+        
+          title: "Success Conditioning as Policy Improvement",
+        
+        description: "Why imitating successful trajectories can improve a policy, and how action influence limits the gain.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/success-conditioning-as-policy-improvement/";
+          
+        },
+      },{id: "post-toward-dexterous-mobile-manipulation",
         
           title: "Toward Dexterous Mobile Manipulation",
         
