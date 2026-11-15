@@ -1,3 +1,9 @@
+.has-sidebar > .container.research-topic-container[role="main"] {
+  max-width: 1320px;
+  margin-top: 0;
+  padding: 32px clamp(28px, 3vw, 44px) 40px;
+}
+
 .post-header {
   margin-bottom: 1.5rem;
 }
@@ -162,12 +168,20 @@
 }
 
 @media (max-width: 991.98px) {
+  .has-sidebar > .container.research-topic-container[role="main"] {
+    padding: 24px 24px 36px;
+  }
+
   .research-topic-page .research-topic-section {
     scroll-margin-top: 96px;
   }
 }
 
 @media (max-width: 575.98px) {
+  .has-sidebar > .container.research-topic-container[role="main"] {
+    padding: 20px 18px 28px;
+  }
+
   .research-topic-page .technical-background-entry {
     grid-template-columns: minmax(0, 1fr);
     gap: 0.4rem;
