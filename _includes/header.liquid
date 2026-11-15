@@ -82,6 +82,24 @@
                       >
                         {{- topic.title | escape -}}
                       </a>
+                      {% if page.topic_sections and page.url == topic.url %}
+                        <ul class="sidebar-page-sections" aria-label="{{ topic.title | escape }} sections">
+                          {% for section in page.topic_sections %}
+                            <li>
+                              <a
+                                class="nav-link"
+                                href="#{{ section.id | escape }}"
+                                data-topic-section="{{ section.id | escape }}"
+                                {% if forloop.first %}
+                                  aria-current="location"
+                                {% endif %}
+                              >
+                                {{- section.title | escape -}}
+                              </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
                     </li>
                   {% endfor %}
                 </ul>

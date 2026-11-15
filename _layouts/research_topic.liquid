@@ -4,10 +4,44 @@ layout: page
 {{ content }}
 
 {% assign topic_projects = site.projects | where: 'research_topic', page.research_topic | sort: 'importance' %}
-<div class="projects">
-  <div class="row row-cols-1 row-cols-md-2">
-    {% for project in topic_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
+{% assign project_heading_tag = 'h2' %}
+{% if page.topic_sections %}
+  {% assign project_heading_tag = 'h3' %}
+{% endif %}
+{% capture research_cards %}
+  <div class="projects">
+    <div class="row row-cols-1 row-cols-md-2">
+      {% for project in topic_projects %}
+        {% include projects.liquid heading_tag=project_heading_tag %}
+      {% endfor %}
+    </div>
   </div>
-</div>
+{% endcapture %}
+
+{% if page.topic_sections %}
+  <link rel="stylesheet" href="{{ '/assets/css/research-topic.css' | relative_url | bust_file_cache }}">
+
+  <div class="research-topic-page" data-research-sections>
+    <section class="research-topic-section" id="research" data-topic-section-content aria-labelledby="research-heading">
+      <h2 class="research-topic-heading" id="research-heading">Research</h2>
+      {{ research_cards }}
+    </section>
+
+    <section class="research-topic-section" id="technical-background" data-topic-section-content aria-labelledby="technical-background-heading">
+      <h2 class="research-topic-heading" id="technical-background-heading">Technical Background</h2>
+      {% if page.technical_background and page.technical_background.size > 0 %}
+        <div class="technical-background-list">
+          {% for entry in page.technical_background %}
+            {% include technical_background_entry.liquid entry=entry %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="technical-background-empty">Selected coursework and independent study materials are being organized.</p>
+      {% endif %}
+    </section>
+  </div>
+
+  <script src="{{ '/assets/js/research-topic.js' | relative_url | bust_file_cache }}" defer></script>
+{% else %}
+  {{ research_cards }}
+{% endif %}

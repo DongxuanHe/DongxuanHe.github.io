@@ -1,0 +1,35 @@
+{% assign entry = include.entry %}
+<article class="technical-background-entry">
+  {% if entry.type or entry.source %}
+    <div class="technical-background-type">
+      {% if entry.type %}
+        <p>{{ entry.type | escape }}</p>
+      {% endif %}
+      {% if entry.source %}
+        <p>{{ entry.source | escape }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="technical-background-content">
+    <h3>{{ entry.title | escape }}</h3>
+    {% if entry.summary %}
+      <p class="technical-background-summary">{{ entry.summary | escape }}</p>
+    {% endif %}
+    {% if entry.url %}
+      {% if entry.url contains '://' %}
+        {% assign entry_url = entry.url %}
+      {% else %}
+        {% assign entry_url = entry.url | relative_url %}
+      {% endif %}
+      <a href="{{ entry_url | escape }}" aria-label="Read materials for {{ entry.title | escape }}">View materials</a>
+    {% endif %}
+    {% if entry.details %}
+      <details class="technical-background-details">
+        <summary>
+          Details<span class="sr-only">: {{ entry.title | escape }}</span>
+        </summary>
+        <div>{{ entry.details | markdownify }}</div>
+      </details>
+    {% endif %}
+  </div>
+</article>

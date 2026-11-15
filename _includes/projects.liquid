@@ -1,5 +1,6 @@
 <div class="col">
   {% assign project_link = project.redirect | default: project.url %}
+  {% assign project_heading_tag = include.heading_tag | default: 'h2' %}
   <article class="card hoverable project-card">
     <a class="project-card-main" href="{{ project_link | relative_url }}">
       {% if project.img %}
@@ -14,7 +15,7 @@
         %}
       {% endif %}
       <div class="card-body">
-        <h2 class="card-title">{{ project.title }}</h2>
+        <{{ project_heading_tag }} class="card-title">{{ project.title }}</{{ project_heading_tag }}>
         <p class="card-text">{{ project.description }}</p>
       </div>
     </a>
