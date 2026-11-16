@@ -2,7 +2,12 @@
 layout: research_topic
 title: Other Work
 permalink: /research/other-work/
-description: Course projects in reinforcement learning and active learning.
 research_topic: other
 nav: false
+topic_sections:
+  - id: research
+    title: Research
+  - id: technical-background
+    title: Technical Background
+technical_background: []
 ---
