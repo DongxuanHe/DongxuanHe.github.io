@@ -18,7 +18,7 @@
 .research-map .research-map__hub h1 {
   margin: 0;
   font-family: var(--font-family-heading);
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 1.1;
 }
@@ -179,7 +179,7 @@
 }
 
 .research-map.is-radial[data-compact="true"] .research-map__hub h1 {
-  font-size: 25px;
+  font-size: clamp(12px, 3.5vw, 16px);
 }
 
 .research-map.is-radial[data-compact="true"] .research-map__hub p {
