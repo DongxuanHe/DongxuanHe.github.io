@@ -17,7 +17,7 @@
 
 .research-map .research-map__hub h1 {
   margin: 0;
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: var(--font-family-heading);
   font-size: 36px;
   font-weight: 400;
   line-height: 1.1;
@@ -67,7 +67,7 @@
 .research-map .research-map__topic h2 {
   min-height: 52px;
   margin: 0;
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: var(--font-family-heading);
   font-size: 24px;
   font-weight: 400;
   line-height: 1.08;

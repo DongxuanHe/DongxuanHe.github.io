@@ -1,0 +1,49 @@
+// Shared type roles for page headings, research entries, and navigation.
+:root {
+  --font-family-body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-family-heading: "Lora", Georgia, serif;
+}
+
+body {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+}
+
+h1,
+h2,
+.h1,
+.h2 {
+  font-family: var(--font-family-heading);
+}
+
+h1,
+.h1 {
+  font-weight: 400;
+}
+
+h2,
+.h2 {
+  font-weight: 500;
+}
+
+h3,
+h4,
+h5,
+h6,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--font-family-body);
+  font-weight: 600;
+}
+
+.projects .card .card-title {
+  font-family: var(--font-family-body);
+  font-weight: 600;
+}
+
+.site-sidebar .sidebar-name,
+.site-sidebar .sidebar-menu .active > .nav-link {
+  font-weight: 600;
+}
